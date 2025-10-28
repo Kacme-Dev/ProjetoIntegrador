@@ -1,0 +1,128 @@
+:root
+{
+    /* Mantenha suas variáveis */
+    --corDeFundo: white;
+    --corDeFundoCabecalho: #146ADB; /* Azul principal do cabeçalho */
+    --corDosBotoesDeCadastro: #FF8000; /* Laranja */
+    --corDeFundoRodape: #2B2B2B; /* Fundo do rodapé */
+}
+
+/* Reset básico */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container /*Aplica alterações nos menus da página*/
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#navbarNavTop
+{
+    height: 55px;
+}
+
+.navbar-brand img /*Altera tamanho da imagem da logo da empresa*/
+{
+    position: absolute;
+    width: 150px;
+    left: 0;
+    top: 0;   
+}
+
+.text-center
+{
+    margin-top: 50px;
+}
+
+.input-group
+{    
+    margin: 35px auto;    
+    width: 640px;
+    height: 50px;    
+    border-color: rgb(235, 231, 231);
+    font-family: Arial, Helvetica, sans-serif 12;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.carousel-inner
+{
+    height: 400px;
+}
+
+
+body
+{
+    background-color: #f2f2f2;
+}
+
+/* ------------------------------------- */
+/* Estilos para replicar a IMAGEM - NAVBAR E HEADER */
+/* ------------------------------------- */
+
+/* 1. Fundo do Título Azul */
+.header-blog-bg {
+    background-color: var(--corDeFundoCabecalho);
+}
+
+/* 2. Cor do Link Ativo (Blog) */
+.nav-link-active {
+    /* Cor de destaque para o link "Blog" */
+    color: var(--corDosBotoesDeCadastro) !important;
+    font-weight: bold;
+}
+
+/* 3. Filtros (Pílulas) */
+.filter-pill {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    color: #495057; /* Texto cinza escuro */
+}
+.filter-pill span {
+    cursor: pointer;
+}
+
+/* 4. Estilo do Post Destaque */
+.highlight-post img {
+    /* Para a imagem de destaque */
+    max-height: 350px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ------------------------------------- */
+/* Estilos ORIGINAIS - Ajustados para consistência */
+/* ------------------------------------- */
+
+/* reduz a logo do navbar (aparece no canto superior esquerdo) */
+.navbar-logo {
+    height: 30px; /* Ajustado para ser menor */
+    width: auto;
+    display: inline-block;
+    object-fit: contain;
+}
+
+/* O restante do seu CSS original pode permanecer aqui, 
+   mas classes como .login-btn e .navbar-nav não são mais necessárias 
+   devido às classes Bootstrap usadas no novo HTML. 
+*/
+
+.navbar-nav {
+    font-size: medium; /* Reduzido para encaixar na navbar da imagem */
+}
+
+.text-center
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
