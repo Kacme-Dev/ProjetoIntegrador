@@ -1,0 +1,284 @@
+:root {
+  /* Mantenha suas variáveis */
+  --corDeFundo: white;
+  --corDeFundoCabecalho: #146adb; /* Azul principal do cabeçalho */
+  --corDosBotoesDeCadastro: #ffc300; /* Laranja */
+  --corDeFundoRodape: #2b2b2b; /* Fundo do rodapé */
+}
+
+body {
+  /* NOVA PALETA DE CORES */
+  background-color: #f2f2f2;
+
+  
+}
+
+.nav-link
+{
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: large;
+}
+
+/* 7-) Estilo ao Passar o Mouse (Hover) */
+.nav-link:hover
+{
+    color: var(--corDeFundoCabecalho); /* Azul principal */
+    text-decoration: underline;
+} 
+
+/* 8-) Estilo do Link Ativo */
+.nav-link-active /* INÍCIO */
+{
+    color: #ffc300; /* Amarelo de destaque */
+    font-weight: bold;
+}
+
+/* Estilo para a barra de navegação */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* --------------------------LOGO HEADER--------------------- */
+.navbar-brand {
+  font-size: 25px;
+  font-style: oblique;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif, Geneva,
+    Tahoma, sans-serif;
+  text-decoration: none; /* Remove o sublinhado do link */
+  padding: 0; /* Garante que não haja padding indesejado */
+  line-height: 1; /* Garante que as partes fiquem na mesma linha */
+  transition: transform 0.1s ease-in-out;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.2); /* Sobe um pouquinho ao passar o mouse */
+  cursor: pointer;
+}
+
+.serv-part {
+  color: black;
+  /* Sombra para profundidade */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  /* Sublinhado amarelo para harmonizar com o Go! */
+}
+
+.go-part {
+  color: #ffc300; /* Amarelo */
+  /* Contorno e sombra de profundidade */
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333,
+    1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);
+  position: relative;
+  left: 1px;
+}
+/* --------------------------FINAL LOGO HEADER--------------------- */
+
+/* ------------------------- INICIO LOGO FOOTER ---------------------- */
+.navbar-footer {
+  font-size: 55px;
+  font-style: oblique;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif, Geneva,
+    Tahoma, sans-serif;
+  text-decoration: none;
+  padding: 0;
+  margin-top: 80px;
+  display: inline-block; /* Garante que o span funcione corretamente */
+}
+
+.serv-part-footer {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.go-part-footer {
+  color: #ffc300;
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px  1px 0 #333,
+    1px  1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);
+  position: relative;
+  left: 1px;
+}
+/* ---------------------------------------FINAL LOGO FOOTER------------------------ */
+
+
+/* -------------------------- CORREÇÃO DE ALINHAMENTO PARA MOBILE ----------------- */
+@media (max-width: 991.98px) {
+  /* Zera a margem dos ULs que são centralizados no desktop */
+  .navbar-collapse .mx-auto,
+  .navbar-collapse .ms-auto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Alinha o texto e os itens à esquerda no menu colapsado */
+  .navbar-collapse .navbar-nav {
+    text-align: left;
+    align-items: flex-start !important;
+    width: 100%;
+    padding-left: 1rem; /* Adiciona um pequeno padding para não encostar na borda */
+  }
+
+  /* Alinha os botões corretamente no mobile (ficam na mesma linha, alinhados à esquerda) */
+  .navbar-collapse .btn {
+    margin-left: 0 !important;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: auto;
+  }
+}
+
+/* ----------------------ESTILOS DOS CARDS (FORMULÁRIOS)------------------------ */
+
+/* Estilo Base para o Contêiner do Formulário */
+.form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-label
+{
+  /* TIPOGRAFIA MODERNA */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: #333;
+
+    /* Remove scroll horizontal desnecessário */
+    overflow-x: hidden;
+}
+
+/* 1. ESTILO DO CARD DE ESCOLHA (BOTÃO GRANDE) */
+.card-escolha {
+  cursor: pointer;
+  padding: 100px 30px; /* Grande padding para ocupar a área do formulário */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  transition: background-color 0.2s;
+  border-radius: 10px;
+}
+
+.card-escolha:hover {
+  background-color: #f7f7f7;
+}
+
+.form-label {
+  font-size: larger;
+}
+
+/* 2. ESCONDER O FORMULÁRIO DETALHADO POR PADRÃO */
+.formulario-detalhe {
+  display: none;
+}
+
+/* 3. Estilos de Destaque para o Prestador (Amarelo) */
+.prestador-card {
+  border-top: 10px solid #ffc300;
+}
+
+.prestador-titulo {
+  color: #ffc300 !important;
+  font-weight: 900;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #ffc300;
+  padding-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* 4. Estilos de Destaque para o Cliente (Azul) */
+.cliente-card {
+  border-top: 10px solid #146adb;
+}
+
+.cliente-titulo {
+  color: #146adb !important;
+  font-weight: 900;
+  font-size: 1.8rem;
+  border-bottom: 3px solid #146adb;
+  padding-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Resetar padding do form-container APÓS o clique para mostrar o formulário */
+#prestador-card-completo.form-visivel,
+#cliente-card-completo.form-visivel {
+  padding: 30px;
+}
+
+/* --- AJUSTES PARA EFEITOS DE TRANSIÇÃO --- */
+
+/* ESTILO PARA CENTRALIZAR O CARD ATIVO */
+.centralizar-coluna {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Amplia a transição para múltiplas propriedades para um efeito mais suave */
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva mais suave e profissional */
+}
+
+/* ----------------------------------------------------- */
+/* NOVAS CLASSES PARA FADE IN/OUT E ESCALA SUAVE */
+/* ----------------------------------------------------- */
+
+/* Oculta os formulários detalhados no início com opacidade zero e escala menor */
+.formulario-detalhe {
+  display: none; /* Ainda oculto por JS */
+  opacity: 0;
+  transform: scale(0.95); /* Começa ligeiramente menor */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Transição para opacidade e escala */
+}
+
+/* Classe para mostrar o formulário com fade-in e escala normal */
+.formulario-detalhe.show {
+  opacity: 1;
+  transform: scale(1);
+  display: block; /* O JS ainda vai definir isso, mas o CSS controla a animação */
+}
+
+/* Esconde o card de escolha com um fade-out e escala menor */
+.card-escolha.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in; /* Transição para opacidade e escala */
+}
+
+/* Opcional: Efeito para a coluna que desaparece */
+.col-md-6.hide-column {
+  opacity: 0;
+  transform: translateX(100%); /* Desliza para fora */
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  /* Certifique-se de que ela não ocupe espaço visual após a transição */
+  position: absolute; /* Ou display: none; após a transição */
+  visibility: hidden; /* Esconde mas mantém a posição por um tempo */
+}
+
+/* Opcional: Ajuste para o .form-container dentro da coluna para suavizar o padding */
+.form-container {
+  transition: padding 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+/* ---###################### ESTILOS ESPECÍFICOS PARA A TELA DE LOGIN #############################--- */
+
+/* Estilos de Destaque para o Card de Login */
+.login-card {
+    /* Usa a cor principal da sua marca (o Azul) para destaque */
+    border-top: 10px solid #146ADB; 
+    
+    /* Garante que o card de login use a mesma sombra e estilo base do .form-container */
+    /* Como o .login-card usa .form-container, este bloco apenas sobrescreve a borda/título */
+}
+
+.login-titulo {
+    color: #146ADB !important; /* Título azul */
+    font-weight: 900;
+    border-bottom: 3px solid #ffc300; /* Linha sutil abaixo do título */
+    padding-bottom: 10px;
+}

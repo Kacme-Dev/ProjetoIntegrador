@@ -1,0 +1,349 @@
+:root
+{
+    /* Mantenha suas variáveis */
+    --blue: #007bff;
+    --blue2: #0056b3;
+    --gray-light: #f8f9fa;
+    --border-color: #dee2e6;
+    --card-bg: white;
+    --yellow-admin: #FFC300;
+    --cyan-btn: #17a2b8; /* Cor para botões de configuração */
+    --corDeFundo: white;
+    --corDeFundoCabecalho: #146ADB; /* Azul principal do cabeçalho */
+    --corDosBotoesDeCadastro: #ffc300; /* Laranja */
+    --corDeFundoRodape: #2B2B2B; /* Fundo do rodapé */
+}
+
+/* Reset básico */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.btn, button, a, .navbar-brand, .cta
+{
+    /* Garante uma transição suave para o movimento de pressão e hover */
+    transition: all 0.15s ease-in-out; 
+}
+
+/* Efeito de PRESSIONAR (pseudo-seletor :active) - Aplica a todos os elementos interativos */
+.btn:active, button:active, a:active, .navbar-brand:active, .cta:active
+{
+    /* Move o elemento ligeiramente para baixo para simular a pressão */
+    transform: translateY(2px) !important;
+    
+    /* Remove a sombra de foco ao pressionar, se existir */
+    box-shadow: none !important;
+}
+
+/*-------------------------------------------------------------------------------------------------------
+                            TOPO DA PÁGINA - CABEÇALHO E NAVEGAÃO - DE 01 A 05
+-------------------------------------------------------------------------------------------------------*/
+
+/* 01-) Barra de Menus - Topo da Página*/
+.navbar
+{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+/*----------------------------------LOGO (ServGo!) - TOPO DA PÁGINA------------------------------------*/
+
+/* 02-) Altera as características gerais do Logo */
+.navbar-brand
+{
+    font-size: 25px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.1s ease-in-out;
+}
+ 
+/* 03-) Efeito ao passar o mouse sobre o Logo */
+.navbar-brand:hover
+{
+    transform: scale(1.1); /* Ajustado para um scale um pouco menor */
+    cursor: pointer;
+}
+
+/* 04-) Altera caracterísitcas da palavar Serv do Logo */
+.serv-part
+{
+    color: black;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+ 
+/* 05-) Altera caracterísitcas da palavar GO! do Logo */
+.go-part
+{
+    color: #ffc300;
+    /* Contorno e sombra de profundidade */
+    text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);
+    position: relative;
+    left: 1px;
+}
+/*--------------------------------------------- FIM - LOGO - TOPO DA PÁGINA (MENUS)---------------------------------------------*/
+
+
+
+
+
+
+/*---------------------------ESTILO DOS LINKS DE NAVEGAÇÃO - MENUS/TOPO DA PÁGINA - DE 06 A 08---------------------------------*/
+
+/* 6-) Estilo Padrão para os Links de Navegação */
+.nav-link
+{
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: large;
+}
+
+/* 7-) Estilo ao Passar o Mouse (Hover) */
+.nav-link:hover
+{
+    color: var(--corDeFundoCabecalho); /* Azul principal */
+    text-decoration: underline;
+} 
+
+/* 8-) Estilo do Link Ativo */
+.nav-link-active /* INÍCIO */
+{
+    color: #ffc300; /* Amarelo de destaque */
+    font-weight: bold;
+}
+/*---------------------FIM - ESTILO DOS LINKS DE NAVEGAÇÃO - MENUS/TOPO DA PÁGINA---------------------*/
+
+
+
+
+    
+/*-------------------------------------------------------------------------------------------------------
+                                            HOTSITE - ADM
+-------------------------------------------------------------------------------------------------------*/
+
+ .container-titulo
+    {
+        background-color: var(--corDeFundoRodape);
+        color: white;
+        margin-top: 25px;
+        margin-bottom: 25px;        
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        height: 50px;
+        align-content: center;
+    }
+
+    .admin-controls
+    {
+      flex: 1;
+      padding: 20px;
+      background-color: white;
+      color: var(--corDeFundoRodape);
+      border-top: 10px solid #ffc300;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);      
+      height: fit-content;
+      position: sticky;
+      top: 20px;      
+    }    
+
+    .admin-controls h3
+    {
+      margin-top: 0;
+      color: var(--corDeFundoRodape);
+      border-bottom: 1px solid var(--corDeFundoRodape);
+      padding-bottom: 5px;
+    }
+
+    .admin-controls label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .admin-controls input[type="text"],
+    .admin-controls textarea,
+    .admin-controls select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #f7f7f7;
+    }
+
+    .addFoto
+    {
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8em;
+        border-radius: 4px;
+        height: 25px;
+        color: black;
+    }
+    
+
+    
+
+    
+
+    
+
+    
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+
+    .hotsite-admin-layout {
+      display: flex;
+      gap: 20px;
+    }
+
+    .hotsite-preview {
+      flex: 3;
+      position: relative;
+    }
+
+    
+
+    
+
+    .btn-group:hover {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      background-color: white;
+    }
+
+    .cta, .btn {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    
+    .cta {
+      background-color: var(--blue);
+      color: white;
+      border: none;
+    }
+    
+    .btn-save {
+      background-color: var(--corDosBotoesDeCadastro);
+    }
+
+    .btn-cancel {
+      background-color: rgb(230, 26, 26);
+      color: white;
+    }
+
+    /* Estilos do Hotsite original (simplificados para esta simulação) */
+    .hotsite-main {
+      display: flex;
+      gap: 20px;
+    }
+
+    .profile-card {
+      flex-shrink: 0;
+      width: 250px;
+      padding: 15px;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .avatar {
+      background-color: #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      margin: 0 auto 10px;
+    }
+
+    .meta {
+      color: #6c757d;
+      font-size: 0.9em;
+    }
+
+    .kv {
+      font-weight: 500;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .thumb {
+      width: 100px;
+      height: 75px;
+      background-color: #e9ecef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8em;
+      border-radius: 4px;
+      border: 1px dashed #adb5bd;
+    }
+
+    .testimonial {
+      margin-top: 8px;
+      padding: 8px;
+      background-color: var(--gray-light);
+      border-left: 3px solid var(--blue);
+    }
+    
+    .placeholder {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    
+    .edit-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--yellow-admin);
+        color: #343a40;
+        text-align: center;
+        padding: 5px;
+        font-size: 0.8em;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        z-index: 10;
+    }
+    
+    .hotsite-preview .card {
+        padding-top: 30px;
+    }
+    
+    /* Estilo para a nova linha de botões administrativos no preview */
+    .admin-actions-preview a {
+        background-color: var(--cyan-btn) !important;
+        margin-right: 10px;
+    }

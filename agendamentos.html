@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agenda — João Carpintaria</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilos básicos (reutilizando variáveis do Admin/Hotsite) */
+    :root {
+      --blue: #007bff;
+      --blue2: #0056b3;
+      --gray-light: #f8f9fa;
+      --border-color: #dee2e6;
+      --card-bg: white;
+      --green-success: #28a745;
+      --red-danger: #dc3545;
+      --yellow-warning: #ffc107;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: var(--gray-light);
+    }
+
+    .header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 20px;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      background-color: var(--blue);
+      color: white;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 4px;
+      margin-right: 8px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: var(--blue2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      background-color: var(--blue);
+      color: white;
+      border: none;
+    }
+
+    /* Estilos Específicos da Agenda */
+    .agenda-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .agenda-tabs {
+        display: flex;
+        margin-bottom: 15px;
+        border-bottom: 2px solid var(--border-color);
+    }
+    
+    .agenda-tabs a {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #6c757d;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s;
+    }
+    
+    .agenda-tabs a.active {
+        color: var(--blue2);
+        border-bottom: 2px solid var(--blue2);
+    }
+    
+    .schedule-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .schedule-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .schedule-item:last-child {
+        border-bottom: none;
+    }
+
+    .time-slot {
+      flex-shrink: 0;
+      width: 120px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    .client-info {
+      flex-grow: 1;
+      padding: 0 20px;
+    }
+
+    .client-info strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.05em;
+    }
+
+    .service-status {
+      flex-shrink: 0;
+      width: 150px;
+      text-align: right;
+    }
+
+    .status-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+
+    .status-tag.confirmed {
+      background-color: #d4edda;
+      color: var(--green-success);
+    }
+
+    .status-tag.pending {
+      background-color: #fff3cd;
+      color: var(--yellow-warning);
+    }
+
+    .status-tag.completed {
+      background-color: #e2e3e5;
+      color: #6c757d;
+    }
+    
+    .action-buttons button {
+        margin-left: 8px;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+    
+    .action-buttons .btn-confirm {
+        background-color: var(--green-success);
+        color: white;
+        border: none;
+    }
+    
+    .action-buttons .btn-cancel {
+        background-color: var(--red-danger);
+        color: white;
+        border: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <div class="logo">PS</div>
+        <div style="font-weight:700;color:var(--blue2)">Portal Prestadores</div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="agenda-prestador.html" style="font-weight:bold;color:var(--blue);">Agenda</a>
+        <a href="hotsite-admin.html">Hot Site (Admin)</a>
+        <a href="avaliacoes.html">Avaliações</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="agenda-header">
+        <h1>Minha Agenda de Serviços</h1>
+        <a class="cta" href="configurar-agenda.html" style="background-color:#17a2b8;">Configurar Disponibilidade</a>
+    </div>
+
+    <div class="card">
+        <div class="agenda-tabs">
+            <a href="#" class="active">Próximos Agendamentos (6)</a>
+            <a href="#">Pendentes de Confirmação (1)</a>
+            <a href="#">Histórico (35)</a>
+        </div>
+        
+        <ul class="schedule-list">
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">HOJE</div>
+                    14:00 - 17:00
+                </div>
+                <div class="client-info">
+                    <strong>Maria da Silva</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Montagem de Estante</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Rua das Flores, 123 - Centro</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag confirmed">Confirmado</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button style="border-color: var(--blue);">Detalhes</button>
+                        <button class="btn-cancel">Cancelar</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">AMANHÃ</div>
+                    09:00 - 11:00
+                </div>
+                <div class="client-info">
+                    <strong>Pedro Souza</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Pequeno Reparo na Porta</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Av. Principal, 500 - Vila Nova</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag pending">Pendente</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button class="btn-confirm">Confirmar</button>
+                        <button class="btn-cancel">Rejeitar</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">QUI, 25/OUT</div>
+                    10:00 - 12:00
+                </div>
+                <div class="client-info">
+                    <strong>Ana Lúcia</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Restauração de Móvel Antigo</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Bairro Nobre, 330</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag confirmed">Confirmado</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button style="border-color: var(--blue);">Detalhes</button>
+                        <button class="btn-cancel">Cancelar</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">SEG, 14/OUT</div>
+                    08:00 - 13:00
+                </div>
+                <div class="client-info">
+                    <strong>Fábio Mello</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Instalação de Prateleiras (5)</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Condomínio Residencial</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag completed">Concluído</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button>Ver Nota</button>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        
+    </div>
+  </main>
+</body>
+</html>

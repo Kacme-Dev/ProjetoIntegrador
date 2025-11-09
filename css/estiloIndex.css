@@ -1,0 +1,577 @@
+:root
+{
+    /* Mantenha suas variáveis */
+    --blue: #007bff;
+    --blue2: #0056b3;
+    --gray-light: #f8f9fa;
+    --border-color: #dee2e6;
+    --card-bg: white;
+    --yellow-admin: #FFC300;
+    --cyan-btn: #17a2b8; /* Cor para botões de configuração */
+    --corDeFundo: white;
+    --corDeFundoCabecalho: #146ADB; /* Azul principal do cabeçalho */
+    --corDosBotoesDeCadastro: #ffc300; /* Laranja */
+    --corDeFundoRodape: #2B2B2B; /* Fundo do rodapé */
+}
+
+/* Reset básico */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------
+    IMPLEMENTAÇÃO DO EFEITO DE PRESSIONAR PARA TODOS OS ELEMENTOS CLICÁVEIS (SOLICITADO)
+-------------------------------------------------------------------------------------------------------*/
+
+/* Agrupa todos os elementos interativos para aplicar o efeito de pressão:
+   - Botões padrão do Bootstrap (.btn)
+   - Links clicáveis com o cursor padrão (a)
+   - Componentes específicos como logo (.navbar-brand) e links de navegação (.nav-link)
+   - Botões nativos (button) e classes de chamada para ação (.cta)
+*/
+.btn, button, a, .navbar-brand, .cta
+{
+    /* Garante uma transição suave para o movimento de pressão e hover */
+    transition: all 0.15s ease-in-out; 
+}
+
+/* Efeito de PRESSIONAR (pseudo-seletor :active) - Aplica a todos os elementos interativos */
+.btn:active, button:active, a:active, .navbar-brand:active, .cta:active {
+    /* Move o elemento ligeiramente para baixo para simular a pressão */
+    transform: translateY(2px) !important;
+    
+    /* Remove a sombra de foco ao pressionar, se existir */
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+                            TOPO DA PÁGINA - CABEÇALHO E NAVEGAÃO - DE 01 A 05
+-------------------------------------------------------------------------------------------------------*/
+
+/* 01-) Barra de Menus - Topo da Página*/
+.navbar
+{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+/*----------------------------------LOGO (ServGo!) - TOPO DA PÁGINA------------------------------------*/
+
+/* 02-) Altera as características gerais do Logo */
+.navbar-brand
+{
+    font-size: 25px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.1s ease-in-out;
+}
+ 
+/* 03-) Efeito ao passar o mouse sobre o Logo */
+.navbar-brand:hover
+{
+    transform: scale(1.2); /* Ajustado para um scale um pouco menor */
+    cursor: pointer;
+}
+
+/* 04-) Altera caracterísitcas da palavar Serv do Logo */
+.serv-part
+{
+    color: black;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+ 
+/* 05-) Altera caracterísitcas da palavar GO! do Logo */
+.go-part
+{
+    color: #ffc300;
+    /* Contorno e sombra de profundidade */
+    text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);
+    position: relative;
+    left: 1px;
+}
+/*--------------------------------------------- FIM - LOGO - TOPO DA PÁGINA (MENUS)---------------------------------------------*/
+
+
+
+
+
+
+/*---------------------------ESTILO DOS LINKS DE NAVEGAÇÃO - MENUS/TOPO DA PÁGINA - DE 06 A 08---------------------------------*/
+
+/* 6-) Estilo Padrão para os Links de Navegação */
+.nav-link
+{
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: large;
+}
+
+/* 7-) Estilo ao Passar o Mouse (Hover) */
+.nav-link:hover
+{
+    color: var(--corDeFundoCabecalho); /* Azul principal */
+    text-decoration: underline;
+} 
+
+/* 8-) Estilo do Link Ativo */
+.nav-link-active /* INÍCIO */
+{
+    color: #ffc300; /* Amarelo de destaque */
+    font-weight: bold;
+}
+/*---------------------FIM - ESTILO DOS LINKS DE NAVEGAÇÃO - MENUS/TOPO DA PÁGINA---------------------*/
+
+/*-------------------------------------------------------------------------------------------------------
+                              FIM - TOPO DA PÁGINA - CABEÇALHO E NAVEGAÇÃO
+-------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+                             IMAGEM ABAIXO DO MENU - BANNER - DE 09  12
+-------------------------------------------------------------------------------------------------------*/
+
+/* 09-) Container que envolve a imagem abaixo do Menu na Página Principal do Site*/
+.container-chamada
+{
+    margin-top: 25px;
+}
+
+/* 10-) Define a imagem abaixo do Menu na Página Principal do Site*/
+.header-chamada
+{
+    background-image: url(../img/Fundo_Portal.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30vh;
+    position: relative;
+}
+
+/* 11-) Atribui à imagem o efeito esfumação, escuro*/
+.header-chamada::before
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* camada escura para contraste */
+}
+
+/* 12-) Deixa o texto no camada mais alta, sobre a imagem*/
+.header-chamada h1,
+.header-chamada p,
+.header-chamada a
+{
+    position: relative;
+    z-index: 1;
+}
+/*-------------------------------------------------------------------------------------------------------
+                                  FIM - IMAGEM ABAIXO DO MENU - BANNER
+-------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+                                                  BODY 
+-------------------------------------------------------------------------------------------------------*/
+
+/*----------------------------------LINKS DE SERVIÇO - DE 13 A 18 -------------------------------------*/
+
+/* 13-) Cor do Fundo - Página Geral */
+body
+{
+    background-color: #f2f2f2; 
+    
+}
+
+/* 14-) Container de Links de Serviços - LINKS DIRETOS (Filtros)*/
+.servicos
+{
+    margin-top: 25px;
+    background-color: var(--corDeFundoCabecalho);
+}
+
+/* 15-) Pílula (Container interno) dos filtros */
+.filter-pill {
+    padding: 5px 0;
+}
+
+/* 16-) Estiliza os links dentro da pílula (usando seletor mais específico que .px-3) */
+.filter-pill a
+{
+    color: white;
+    text-decoration: none;
+    /* Garante a transição suave para as propriedades de hover e active (filter e transform) */
+    transition: color 0.3s ease-in-out, filter 0.2s ease, transform 0.15s ease; 
+    font-size: large;    
+}
+
+/* 17-) Atributos de Transição ao Passar o Mouse Sobre os Links de Serviço*/
+.filter-pill a:hover
+{
+    color: #ffc300;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;    
+    cursor: pointer;    
+    /* ADIÇÃO: Efeito de clareamento no hover para feedback visual imediato */
+    filter: brightness(115%);      
+}
+
+/* 18-) Reduz o brilho ao clicar para simular o afundamento visual */
+.filter-pill a:active
+{
+    filter: brightness(100%); 
+}
+
+
+
+
+/*---------------------------------------CARROSSEL DE 19 A 27 ---------------------------------------*/
+
+/* 19-) Responsividade do Carrossel */
+.carousel-inner /*Conteúdo do Carrossel - Tamanho das Fotos*/
+{
+    height: 400px;
+}
+
+/* 20-) Transição Suave das Imagens do Carrossel */
+.carousel-item
+{
+    /* Garante uma transição um pouco mais suave */
+    transition: transform 1.1s ease-in-out; 
+}
+
+/* 21-) Media Query para responsividade do Carrossel em telas menores */
+@media (max-width: 768px)
+{
+    .carousel-inner
+    {
+        height: 200px; /* Reduz a altura do carrossel em telas pequenas/móveis */
+        /* A transição deve ser aplicada ao .carousel-item, não ao .carousel-inner */
+    }
+}
+
+/* 22) Estiliza o botão de controle para ser um círculo e posiciona metade para fora */
+.carousel-control-prev,
+.carousel-control-next
+{
+    width: 50px; /* Define a largura do botão */
+    height: 50px; /* Define a altura do botão */
+    border-radius: 50%; /* Torna o botão redondo */
+    background-color: var(--corDeFundoRodape); /* Cor sólida amarela */
+    opacity: 75% !important; /* Remove qualquer transparência */
+    top: 50%;
+    transform: translateY(-5%);
+}
+
+/* 23-) Ajuste para posicionar o botão PREV 25px para fora (metade de 50px) */
+.carousel-control-prev
+{
+    left: -25px; 
+}
+
+/* 24-) Ajuste para posicionar o botão NEXT 25px para fora (metade de 50px) */
+.carousel-control-next
+{
+    right: -25px;
+}
+
+/* 25-) Estiliza o ícone (seta) dentro do botão de controle, definindo a cor branca */
+.carousel-control-prev-icon,
+.carousel-control-next-icon
+{
+    /* Remove a imagem de fundo padrão do Bootstrap */
+    background-image: none !important;
+    /* Define o tamanho da seta/ícone */
+    width: 1.5rem; 
+    height: 1.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Adiciona sombra para destaque */
+    
+    /* Substitui a seta padrão por uma seta SVG branca (fill='%23fff') */
+    /* Para a seta PREV (esquerda) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") !important;
+}
+
+/* 26-) Substitui o ícone para a seta NEXT (direita) com a cor branca */
+.carousel-control-next-icon
+{
+    /* A cor da seta foi alterada para branco (fill='%23fff') */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* 27-) Cria o efeito de afundamento visual nos botões de controle do carrossel quando ativos. */
+.carousel-control-prev:active,
+.carousel-control-next:active
+{
+    /* Anula Deslocamento */
+    transform: none !important; 
+    
+    /* Efeito visual de afundamento: Adiciona uma sombra interna (inset) para simular que o botão foi empurrado para dentro. */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.4) !important; 
+}
+
+/*------------------------------------------------ FIM DO CARROSSEL --------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------- BUSCA DO SITE - DE 28 A 34 -----------------------------------------------*/
+
+/* 28-) Busca do Site*/
+.input-group 
+{
+    margin: 35px auto;
+    width: 100%;
+    height: 50px;
+    border-color: var(--corDeFundoCabecalho);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 29-) Opacidade do Campo de Busca */
+.form-control
+{
+    opacity: 55%;   
+    border-color: #146ADB !important; /* Cor do contorno da borda */
+    border-width: 2px !important; /* Borda visível */
+}
+
+/* 30-) Garante que o input e o botão tenham a mesma altura */
+.input-group .form-control,
+.input-group .btn 
+{
+    height: 50px; 
+}
+
+/* 31-) REMOVE o box-shadow padrão do Bootstrap */
+.form-control,
+.form-control:focus
+{
+    box-shadow: none !important;   
+    outline: 0 !important; /* Garante que o outline (contorno) do navegador seja removido */    
+    border-color: #146ADB !important; 
+    border-width: 2px !important; 
+}
+
+/* 32-) Estilo do Botão */
+.input-group .btn
+{
+    border: none !important; /* Remove a borda padrão para se fundir ao input */   
+    transition: filter 0.2s ease, transform 0.1s ease; /* Efeito de clareamento (hover) e pressão (active) */
+}
+
+/* 33-)Efeito de HOVER para clarear o botão */
+.input-group .btn:hover
+{
+   filter: brightness(110%);   
+    cursor: pointer; /* Garante que o cursor seja de ponteiro para reforçar que é clicável */
+}
+
+/* 34-) Efeito de Pressionar */
+.input-group .btn:active
+{    
+    transform: translateY(2px) !important; /* Move o botão 2 pixels para baixo */    
+    filter: brightness(105%); /* Um pouco menos claro que o hover, mas ainda visível. */
+    box-shadow: none !important; 
+}
+
+/*-------------------------------------------------------------------------------------------------------
+                                                FIM - BODY
+-------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+                                    ARTICLE - POSTS E CARDS -DE 35 A 46
+-------------------------------------------------------------------------------------------------------*/
+
+/* TÍTULOS DAS SEÇÕES DE ARTIGOS*/
+
+/* 35-) TÍTULO POST EM DESTAQUE */
+.container-post-destaque
+{
+    background-color: var(--corDeFundoRodape);
+    color: white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    height: 50px;
+    align-content: center;
+}
+
+/* 36-) TÍTULO POST ÚLTIMOS ARQUIVOS */
+.container-ultimos-artigos
+{
+    background-color: var(--corDeFundoRodape);
+    color: white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    height: 50px;
+    align-content: center;
+}
+
+/* ESTILIZAÇÃO DOS BOTÕES */
+
+/* 37-) Sobrescreve .btn-primary para usar a cor do Rodapé (dark) */
+/* O !important é necessário para anular a especificidade das classes bg-* e .btn */
+.btn-primary, .btn-primary:focus, .btn-primary:active
+{
+    background-color: var(--corDeFundoRodape) !important;
+    color: white !important;
+    border-color: var(--corDeFundoRodape) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 38-) Estiliza botões de contorno para se tornarem sólidos azuis, ignorando 'outline' */
+.btn-outline-secondary
+{
+    background-color: var(--corDeFundoCabecalho);
+    color: white;
+    border-color: var(--corDeFundoCabecalho);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 39-) BOTÕES DE LEITURA (LER) - ALTERNÂNCIA DE COR */
+.btn-outline-secondary:hover
+{
+    background-color: #ffc300; /* Amarelo de destaque no hover */
+    color: black; /* Cor da letra quando o Hover estiver ativo */
+    border-color: #ffc300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 40-) BADGES (rótulos de categoria) - Aplicado onde não há classe bg-* no HTML */
+.badge
+{
+    background-color: var(--corDeFundoRodape) !important; /* Força o uso do cinza escuro */
+    color: white !important; /* Garante que o texto fique branco no badge */
+}
+
+/* 41-) CONTAINER QUE COMPORTA OS ARTIGOS */
+.container-article
+{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: snow;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 5px rgba(0.1, 0.1, 0.1, 0.1);
+}
+
+/* 42-) BOTÃO VER TODOS OS ARTIGOS - ATRIBUTOS */
+.btn-outline-dark
+{
+    background-color: var(--corDeFundoRodape);
+    color: white;
+    border-color: var(--corDeFundoRodape);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 43-) BOTÃO VER TODOS OS ARTIGOS - ALTERNÂNCIA DE CORES AO PASSAR O MOUSE */
+.btn-outline-dark:hover
+{
+    background-color: var(--corDosBotoesDeCadastro);
+    color: black;
+    border-color: var(--corDosBotoesDeCadastro);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 44-) Fixa a cor do botão de Cadastro */
+.cadastro
+{
+    background-color: var(--corDosBotoesDeCadastro) !important;
+    color: black !important;
+    border-color: var(--corDosBotoesDeCadastro) !important;
+}
+
+/* 45-) Estilo de Hover para o Botão de Cadastro do Header (.btn-warning) */
+.cadastro:hover
+{
+    /* COR FIXADA: Mantém a cor original no hover */
+    background-color: var(--corDosBotoesDeCadastro) !important;
+    color: black !important;
+    border-color: var(--corDosBotoesDeCadastro) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 46-) Garante a cor FIXA no estado Ativo/Clicado */
+.cadastro:active
+{
+    /* COR FIXADA: Garante a cor original ao ser pressionado */
+    background-color: var(--corDosBotoesDeCadastro) !important;
+    color: black !important;
+    border-color: var(--corDosBotoesDeCadastro) !important;
+}
+/*-------------------------------------------------------------------------------------------------------
+                                            FIM - ARTICLE
+-------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+                                                FOOTER - DE 47 A 50
+-------------------------------------------------------------------------------------------------------*/
+
+/* 47-) Estiliza o container do footer */
+.navbar-footer
+{
+    font-size: 55px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 0;        
+}
+ 
+/* 48-) Classe não utilizada no HTML: navbar-brand-footer:hover */
+.serv-part-footer
+{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+ 
+/* 49-) Altera caracterísitcas da palavar GO! do Logo no Footer */
+.go-part-footer
+{
+    color: #FFC300; /* Amarelo */
+    text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);        
+    position: relative;
+    left: 1px;        
+}
+/*-------------------------------------------------------------------------------------------------------
+                                            FIM - FOOTER
+-------------------------------------------------------------------------------------------------------*/
