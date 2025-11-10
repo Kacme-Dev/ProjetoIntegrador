@@ -10,29 +10,33 @@ body {
   /* NOVA PALETA DE CORES */
   background-color: #f2f2f2;
 
-  
+  /* TIPOGRAFIA MODERNA */
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+
+  /* Remove scroll horizontal desnecessário */
+  overflow-x: hidden;
 }
 
-.nav-link
-{
-    color: #000000;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-    font-size: large;
+/* Estilo Padrão para os Links de Navegação */
+.nav-link {
+  color: #000000; /* Cor inicial */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-size: large;
+}
+/* Estilo ao Passar o Mouse (Hover) */
+.nav-link:hover {
+  color: #146adb; /* Azul */
+  text-decoration: underline;
 }
 
-/* 7-) Estilo ao Passar o Mouse (Hover) */
-.nav-link:hover
-{
-    color: var(--corDeFundoCabecalho); /* Azul principal */
-    text-decoration: underline;
-} 
-
-/* 8-) Estilo do Link Ativo */
-.nav-link-active /* INÍCIO */
-{
-    color: #ffc300; /* Amarelo de destaque */
-    font-weight: bold;
+.nav-link-active /* INÍCIO */ {
+  color: #ffc300;
+  font-weight: bold;
 }
 
 /* Estilo para a barra de navegação */
@@ -136,19 +140,6 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.form-label
-{
-  /* TIPOGRAFIA MODERNA */
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1;
-    color: #333;
-
-    /* Remove scroll horizontal desnecessário */
-    overflow-x: hidden;
 }
 
 /* 1. ESTILO DO CARD DE ESCOLHA (BOTÃO GRANDE) */
