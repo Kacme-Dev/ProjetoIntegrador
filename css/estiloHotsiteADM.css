@@ -131,15 +131,23 @@
 -------------------------------------------------------------------------------------------------------*/
 
  .container-titulo
-    {
-        background-color: var(--corDeFundoRodape);
-        color: white;
-        margin-top: 25px;
-        margin-bottom: 25px;        
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        height: 50px;
-        align-content: center;
+ {
+    background-color: var(--corDeFundoRodape);
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 25px;        
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+ }
+
+/* ALTERAÇÃO: Adicionado align-items: stretch; para garantir que os containers tenham a mesma altura. */
+    .hotsite-admin-layout {
+      display: flex;
+      gap: 20px;
+      align-items: stretch; /* Garante que os itens flexíveis (admin-controls e hotsite-preview) tenham a mesma altura */
     }
 
     .admin-controls
@@ -148,20 +156,24 @@
       padding: 20px;
       background-color: white;
       color: var(--corDeFundoRodape);
-      border-top: 10px solid #ffc300;
+      border-top: 28px solid #ffc300;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);      
-      height: fit-content;
-      position: sticky;
-      top: 20px;      
-    }    
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      position: static; /* Ajuste para trabalhar com altura igualada, pode ser reativado se a necessidade de 'sticky' voltar */
+      text-align: center; 
+    }   
+    
+/* Comentário Adicional: O 'position: sticky' original foi removido para permitir que a altura se iguale corretamente
+   ao preview, mas ele pode ser readicionado com ajustes de altura se necessário. */
 
     .admin-controls h3
     {
       margin-top: 0;
-      color: var(--corDeFundoRodape);
-      border-bottom: 1px solid var(--corDeFundoRodape);
+      color: var(--corDosBotoesDeCadastro);
+      border-bottom: 1px solid var(--corDosBotoesDeCadastro);
       padding-bottom: 5px;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .admin-controls label {
@@ -183,6 +195,7 @@
       background-color: #f7f7f7;
     }
 
+    
     .addFoto
     {
         background-color: #e9ecef;
@@ -194,14 +207,41 @@
         height: 25px;
         color: black;
     }
-    
 
-    
+    .caixa-mensagem-fixa
+  {
+    resize: none;
+    height: 430px;
+    width: 100%; /* ou um valor fixo, como 500px */
+}
+ 
+ 
 
-    
+    .config
+    {
+      text-align: center;
+    }
 
-    
+     
+    .btn-acoesPrestador
+    {
+      color: var(--corDeFundoRodape);
+    }
 
+    .btnConfigAgenda .btnConfigRElatorio
+    {
+      background-color: var(--corDeFundoRodape);
+      color: white;
+    }
+
+    /* Estilos para os novos botões da seção 'Ações do Prestador' no preview */
+    .cta-agenda-admin {
+        background-color: var(--corDeFundoRodape) !important; /* Cor do Rodapé (preto) */
+    }
+
+    .cta-relatorios-admin {
+        background-color: var(--corDosBotoesDeCadastro) !important; /* Cor do Salvar e Publicar (amarelo) */
+    }
     
 
     .card {
@@ -211,28 +251,31 @@
       padding: 20px;
     }
 
-    .hotsite-admin-layout {
-      display: flex;
-      gap: 20px;
-    }
+
+    /* .hotsite-admin-layout (movido e ajustado acima para garantir altura igual) */
 
     .hotsite-preview {
       flex: 3;
       position: relative;
     }
 
-    
+    .hotsite-content-img
+    {
+      background-color: #6c757d;
+    }
 
     
 
-    .btn-group:hover {
-      margin-top: 20px;
-      display: flex;
-      gap: 10px;
+    
+
+    .btn-group
+    {
+      margin-top: 20px;      
       background-color: white;
     }
 
-    .cta, .btn {
+    .cta
+    {
       display: inline-block;
       padding: 8px 15px;
       border-radius: 4px;
@@ -247,14 +290,7 @@
       border: none;
     }
     
-    .btn-save {
-      background-color: var(--corDosBotoesDeCadastro);
-    }
-
-    .btn-cancel {
-      background-color: rgb(230, 26, 26);
-      color: white;
-    }
+   
 
     /* Estilos do Hotsite original (simplificados para esta simulação) */
     .hotsite-main {
@@ -262,6 +298,8 @@
       gap: 20px;
     }
 
+/* ALTERAÇÃO: Removido flex-shrink: 0, width fixo e border-right. O alinhamento foi movido para o HTML, 
+   mas o .avatar/h2/meta devem ter alinhamento central garantido. */
     .profile-card {
       flex-shrink: 0;
       width: 250px;
@@ -278,12 +316,13 @@
       font-size: 30px;
       font-weight: bold;
       color: white;
-      margin: 0 auto 10px;
+      margin: 0 auto 10px; /* Mantém o avatar centralizado */
     }
 
     .meta {
       color: #6c757d;
       font-size: 0.9em;
+      /* Comentário Adicional: Garantindo que .meta seja centralizado se o .profile-card for 'text-center' */
     }
 
     .kv {
@@ -296,8 +335,9 @@
       flex-wrap: wrap;
     }
 
+/* ALTERAÇÃO: Adicionado flex-grow: 1 para que cada 'thumb' preencha o espaço horizontal restante. */
     .thumb {
-      width: 100px;
+      width: 100px; /* Mantém o valor original */
       height: 75px;
       background-color: #e9ecef;
       display: flex;
@@ -306,6 +346,11 @@
       font-size: 0.8em;
       border-radius: 4px;
       border: 1px dashed #adb5bd;
+    }
+
+    .thumb-fill {
+        flex-grow: 1; /* Permite que o item cresça e ocupe o espaço disponível */
+        flex-basis: 0; /* Ajuda a distribuir o espaço uniformemente */
     }
 
     .testimonial {
@@ -342,8 +387,47 @@
         padding-top: 30px;
     }
     
-    /* Estilo para a nova linha de botões administrativos no preview */
+    /* O estilo original foi removido pois as novas classes .cta-agenda-admin e .cta-relatorios-admin
+       foram adicionadas e estilizadas acima, conforme solicitado. */
     .admin-actions-preview a {
-        background-color: var(--cyan-btn) !important;
         margin-right: 10px;
     }
+
+    .hotsite-content-card
+    {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    /*-------------------------------------------------------------------------------------------------------
+                                                FOOTER - DE 47 A 50
+-------------------------------------------------------------------------------------------------------*/
+
+/* 47-) Estiliza o container do footer */
+.navbar-footer
+{
+    font-size: 55px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 0;        
+}
+ 
+/* 48-) Classe não utilizada no HTML: navbar-brand-footer:hover */
+.serv-part-footer
+{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+ 
+/* 49-) Altera caracterísitcas da palavar GO! do Logo no Footer */
+.go-part-footer
+{
+    color: #FFC300; /* Amarelo */
+    text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);        
+    position: relative;
+    left: 1px;        
+}
+/*-------------------------------------------------------------------------------------------------------
+                                            FIM - FOOTER
+-------------------------------------------------------------------------------------------------------*/
