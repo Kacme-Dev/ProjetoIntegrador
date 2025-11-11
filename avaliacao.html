@@ -4,30 +4,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ServGo! - Avaliação</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/estilo.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <title>ServGo! - Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40pL1aC6aK/FpL7aW+j2r/8g2fA1s+F7Kz9yS90oK+zB3oN6h/vG/n8E0tH3y6D6Vb9m1pB+hQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="./css/estiloAvaliacao.css">
     </head>
 
     <body>
 
-        <!--INÍCIO DO CABEÇALHO DA PÁGINA-->
         <header>
 
-            <!--TOPO DA PÁGINA-->
-
-            <!--Trabalha sobre os Menus (links)-->
             <nav class="navbar navbar-expand-lg">
 
-                <div class="container menu"> <!--Altera o conteúdo dos Menus (links)-->
-
-                    <!--Propriedades do Logo (Topo da Página) + Clicar no Logo volta para página Home-->
-                    <a class="navbar-brand" href="home.html">
+                <div class="container menu"> <a class="navbar-brand" href="home.html">
                         <span class="serv-part">Serv</span><span class="go-part">Go!</span>
                     </a>
 
-                    <!--Botão Serviços Quando Estiver em Responsividade-->
                     <div class="d-flex order-lg-3">
                         <button class="btn btn-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasServices" aria-controls="offcanvasServices"
@@ -35,14 +28,12 @@
                             <i class="bi bi-list"></i> Serviços
                         </button>
 
-                        <!--Botão Sanduíche Quando Estiver em Responsividade-->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
 
-                    <!--Menus da Página Home-->
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item"><a class="nav-link nav-link-active" href="#">Início</a></li>
@@ -51,32 +42,169 @@
                             <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
                         </ul>
 
-                        <!--Número de Telefone da Página Home-->
                         <ul class="navbar-nav ms-auto align-items-lg-center">
                             <li class="nav-item d-flex align-items-center me-3">
                                 <span class="nav-link p-0 d-none d-lg-block">(18) 99999-9999</span>
                             </li>
 
-                            <!--Botões de Login e Cadastro da Página Home-->
-                            <li class="nav-item mb-2 mb-lg-0 me-2"><a class="btn btn-dark login" href="#">Login</a></li>
-                            <li class="nav-item"><a class="btn btn-warning cadastro" href="#">Cadastro</a></li>
+                            <li class="nav-item mb-2 mb-lg-0 me-2"><a class="btn btn-dark login" href="./login.html">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-warning cadastro" href="./cadastro.html">Cadastro</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <!--FIM DO CABEÇALHO DA PÁGINA-->
+        <div class="container-chamada">
+            <div class="header-chamada d-flex flex-column justify-content-center align-items-center text-center text-white">
+                <h1 class="display-4 fw-bold mb-3">Opiniões de Clientes.</h1>
+                <p class="lead MB-4">
+                    Veja o que nossos clientes estão dizendo sobre os prestadores da nossa plataforma.</p>
+            </div>
+        </div>
 
-        <main class="container">
-            
 
-           
-            
 
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasServices"
+            aria-labelledby="offcanvasServicesLabel">
+            <div class="offcanvas-header bg-primary text-white" style="background-color: #146ADB !important;">
+                <h5 class="offcanvas-title" id="offcanvasServicesLabel">Categorias de Serviço</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Saúde</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Beleza</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Manutenção Predial</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">TI</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Lazer</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Alimentação</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Design</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Segurança</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Logística</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Consultoria</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Construção</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="servicos">
+            <div class="text-center mb-5 d-none d-lg-block">
+                <div class="p-2 filter-pill mx-auto d-inline-block">
+                    <a href="#" class="px-3 border-end">Saúde</a>
+                    <a href="#" class="px-3 border-end">Beleza</a>
+                    <a href="#" class="px-3 border-end">Manutenção Predial</a>
+                    <a href="#" class="px-3 border-end">TI</a>
+                    <a href="#" class="px-3 border-end">Lazer</a>
+                    <a href="#" class="px-3 border-end">Alimentação</a>
+                    <a href="#" class="px-3 border-end">Design</a>
+                    <a href="#" class="px-3 border-end">Segurança</a>
+                    <a href="#" class="px-3 border-end">Logística</a>
+                    <a href="#" class="px-3 border-end">Consultoria</a>
+                    <a href="#" class="px-3">Construção</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <main class="container1">       
+            <div class="review-card">
+            <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+            </div>
+            <p class="review-text">"O serviço de jardinagem foi impecável! O Sr. João é muito profissional, pontual e deixou meu jardim maravilhoso. Recomendo 100%!"</p>
+            <div class="reviewer-info">
+                <span class="reviewer-name">Ana M.</span>
+                <span class="service-provider">Prestador: João da Silva (Jardinagem)</span>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Pintura de apartamento realizada pela Maria. Trabalho de qualidade, apenas demorou um pouco mais do que o previsto, mas o resultado final compensou."</p>
+            <div class="reviewer-info">
+                <span class="reviewer-name">Carlos R.</span>
+                <span class="service-provider">Prestador: Maria P. (Pintura)</span>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+            </div>
+            <p class="review-text">"Contratei o Marcos para manutenção elétrica. Rápido, honesto e resolveu o problema de forma definitiva. Excelente atendimento!"</p>
+            <div class="reviewer-info">
+                <span class="reviewer-name">Fernanda D.</span>
+                <span class="service-provider">Prestador: Marcos A. (Eletricista)</span>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"O serviço de montagem de móveis foi ok, mas a pontualidade do Pedro precisa melhorar. O trabalho final ficou bom, porém atrasou o meu dia."</p>
+            <div class="reviewer-info">
+                <span class="reviewer-name">Roberto F.</span>
+                <span class="service-provider">Prestador: Pedro S. (Montador de Móveis)</span>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+            </div>
+            <p class="review-text">"A faxina pesada da Dona Sônia superou minhas expectativas! Casa brilhando e cheirosa, com atenção a todos os detalhes. Contratarei novamente sem dúvidas!"</p>
+            <div class="reviewer-info">
+                <span class="reviewer-name">Juliana L.</span>
+                <span class="service-provider">Prestador: Sônia B. (Diarista)</span>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Conserto de vazamento feito pelo Tiago. O preço foi justo e o problema foi resolvido rapidamente. A comunicação foi excelente."</p>
+            <div class="reviewer-info">
+                <span class="reviewer-name">André P.</span>
+                <span class="service-provider">Prestador: Tiago V. (Encanador)</span>
+            </div>
+        </div>
         </main>
+        <script src="./js/script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!----------------------------- Inicio do rodapé ------------------------------------>
-    <footer class="bg-dark text-white pt-5 pb-4">
+
+    </body>
+    <footer class="bg-dark text-white pt-5 pb-4" style="background-color: var(--corDeFundoRodape) !important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mb-4">
@@ -126,22 +254,4 @@
             </div>
         </div>
     </footer>
-    <!----------------------------- FIM DO RODAPÉ ------------------------------------>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Pop-up de LGPD (Cookies) -->
-    <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-6 shadow-2xl z-50 hidden">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <p class="text-sm md:text-base text-center md:text-left mb-4 md:mb-0">
-                Utilizamos cookies para melhorar a sua experiência em nosso site, em conformidade com a LGPD. Ao continuar navegando, você concorda com a nossa <a href="#" onclick="showPage('privacy')" class="underline text-orange-500">Política de Privacidade</a>.
-            </p>
-            <button onclick="acceptCookies()" class="bg-orange-500 text-white font-bold py-2 px-6 rounded-full hover:bg-orange-600 transition-colors duration-300">
-                Aceitar
-            </button>
-        </div>
-    </div>
-
-    </body>
-
-</html>
+    </html>
