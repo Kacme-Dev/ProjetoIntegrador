@@ -9,7 +9,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/estiloAvaliacao.css">
         <style>
-            /* garante cor dourada para estrelas "preenchidas" */
+            
             .filled { color: #ffc107 !important; }
         </style>
     </head>
@@ -17,7 +17,7 @@
     <body>
 
         <header>
-
+            <!--Trabalha sobre os Menus (links)-->
             <nav class="navbar navbar-expand-lg">
 
                 <div class="container menu"> <a class="navbar-brand" href="index.html">
@@ -62,6 +62,51 @@
                 <h1 class="display-4 fw-bold mb-3">Opiniões de Clientes.</h1>
                 <p class="lead MB-4">
                     Veja o que nossos clientes estão dizendo sobre os prestadores da nossa plataforma.</p>
+            </div>
+        </div>
+
+        <!--Define a Estrutura da Barra de Títulos do Menu Lateral durante a Resposnividade-->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasServices"
+            aria-labelledby="offcanvasServicesLabel">
+            <div class="offcanvas-header bg-primary text-white" style="background-color: #146ADB !important;">
+                <h5 class="offcanvas-title" id="offcanvasServicesLabel">Categorias de Serviço</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!--Conteúdo apresentado no Menu Lateral durante a Resposnividade-->
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Saúde</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Beleza</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Manutenção Predial</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">TI</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Lazer</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Alimentação</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Design</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Segurança</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Logística</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Consultoria</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-bold" href="#">Construção</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Barra de Links de Serviços da Página Principal-->
+        <div class="servicos">
+            <div class="text-center mb-5 d-none d-lg-block">
+                <div class="p-2 filter-pill mx-auto d-inline-block">
+                    <a href="#" class="px-3 border-end">Saúde</a>
+                    <a href="#" class="px-3 border-end">Beleza</a>
+                    <a href="#" class="px-3 border-end">Manutenção Predial</a>
+                    <a href="#" class="px-3 border-end">TI</a>
+                    <a href="#" class="px-3 border-end">Lazer</a>
+                    <a href="#" class="px-3 border-end">Alimentação</a>
+                    <a href="#" class="px-3 border-end">Design</a>
+                    <a href="#" class="px-3 border-end">Segurança</a>
+                    <a href="#" class="px-3 border-end">Logística</a>
+                    <a href="#" class="px-3 border-end">Consultoria</a>
+                    <a href="#" class="px-3">Construção</a>
+                </div>
             </div>
         </div>
 
