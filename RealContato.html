@@ -69,12 +69,11 @@
             <main class="container">
 
             <div class="col-md-3 mb-4">
-                <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Contato</h5>
-                <p class="small text-white-50"><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - Cidade, SP
-                </p>
-                <p class="small text-white-50"><i class="bi bi-telephone-fill me-2"></i> (18) 91234-5678</p>
-                <p class="small text-white-50"><i class="bi bi-envelope-fill me-2"></i> contato@site.com.br</p>
-                <a href="#" class="small text-decoration-none text-warning">Trabalhe Conosco</a>
+                <h2 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Contato</h2>
+                <h5 ><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - Cidade, SP
+                </h5 >
+                <h5 ><i class="bi bi-telephone-fill me-2"></i> (18) 91234-5678</h5>
+                <h5 ><i class="bi bi-envelope-fill me-2"></i> contato@site.com.br</h5>
             </div>
             <div class="mb-3 container" >
                 <label for="nome" class="form-label">Nome</label>
@@ -87,22 +86,24 @@
             <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
                 <div class="input-group">
+                    
                     <span class="input-group-text">@</span>
                     <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" required>
 
                 </div>
             </div>
             
-            <h2>Entre em contato conosco</h2>
+
+                        <div class="mb-3">
+                <label for="arquivo" class="form-label">Enviar arquivo</label>
+                <input class="form-control" type="file" id="arquivo">
+            </div>
+
 
             <label for="mensagem" class="form-label"></label>
                 <textarea class="caixa-mensagem-fixa" id="mensagem" rows="3" required placeholder="Entre em contato conosco"></textarea>
                 <div class="invalid-feedback">Por favor, insira uma mensagem.</div>
                 <button class="btn btn-primary" type="button">Enviar</button>
-            </div>
-                        <div class="mb-3">
-                <label for="arquivo" class="form-label">Enviar arquivo</label>
-                <input class="form-control" type="file" id="arquivo">
             </div>
         </div>
 
@@ -186,4 +187,3 @@
 
 
 </html>
-
