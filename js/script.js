@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.location.href = 'perfil_cliente.html'; 
                     } else {
                         // Redireciona o Prestador para a página genérica de perfil (perfil.html)
-                        window.location.href = 'perfil.html'; 
+                        window.location.href = 'hotsiteADM.html'; 
                     }
                     } else {
                         // LOGIN COM FALHA

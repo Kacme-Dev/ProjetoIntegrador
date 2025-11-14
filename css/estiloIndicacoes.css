@@ -1,0 +1,137 @@
+:root {
+  --blue: #007bff;
+  --blue2: #0056b3;
+  --gray-light: #f8f9fa;
+  --border-color: #dee2e6;
+  --card-bg: white;
+  --corDeFundoCabecalho: #146ADB;
+  --corDosBotoesDeCadastro: #ffc300;
+  --corDeFundoRodape: #2B2B2B;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--gray-light);
+}
+
+.header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--corDeFundoCabecalho);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--blue2);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--corDeFundoCabecalho);
+}
+
+.container {
+    max-width: 800px; /* Focado em formulário */
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: var(--corDosBotoesDeCadastro);
+    outline: none;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--corDosBotoesDeCadastro); /* Botão de Ação Laranja */
+    color: var(--corDeFundoRodape);
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.cta:hover {
+    background-color: #e6b300;
+}
+
+.linkless {
+    color: var(--blue2);
+    text-decoration: none;
+    padding: 10px 0;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.linkless:hover {
+    text-decoration: underline;
+    color: var(--corDeFundoCabecalho);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    .linkless {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+    }
+}

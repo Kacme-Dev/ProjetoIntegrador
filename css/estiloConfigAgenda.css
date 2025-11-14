@@ -1,0 +1,212 @@
+:root {
+    --blue: #007bff;
+    --blue2: #0056b3;
+    --gray-light: #f8f9fa;
+    --border-color: #dee2e6;
+    --card-bg: white;
+    --green-success: #28a745;
+    --red-danger: #dc3545;
+    --corDeFundoCabecalho: #146ADB;
+    --corDosBotoesDeCadastro: #ffc300;
+    --corDeFundoRodape: #2B2B2B;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--gray-light);
+}
+
+.header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--corDeFundoCabecalho);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--blue2);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--corDeFundoCabecalho);
+}
+
+.container {
+    max-width: 900px; /* Reduzindo a largura para o formulário */
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.cta, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-save {
+    background-color: var(--green-success);
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #1e7e34;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos Específicos do Formulário de Configuração */
+.form-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.form-section h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    color: var(--blue2);
+}
+
+.time-config-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 50px; /* Dia | Início | Fim | Ação */
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+.time-config-grid label {
+    font-weight: bold;
+}
+
+.time-config-grid input[type="time"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.input-group input[type="number"],
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.action-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.unavailable-label {
+    color: var(--red-danger);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .time-config-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Remove a coluna de 'Ativo' para o topo/rodapé */
+    }
+    .time-config-grid label {
+        grid-column: 1 / span 3; /* Ocupa a largura total para o dia */
+    }
+    .time-config-grid strong {
+        display: none; /* Oculta títulos de coluna */
+    }
+    .checkbox-container {
+        grid-column: 1 / span 3;
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+    .unavailable-label {
+        grid-column: 1 / span 3 !important;
+    }
+    .action-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

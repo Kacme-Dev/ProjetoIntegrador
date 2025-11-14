@@ -1,225 +1,73 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Agenda — João Carpintaria</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Estilos básicos (reutilizando variáveis do Admin/Hotsite) */
-    :root {
-      --blue: #007bff;
-      --blue2: #0056b3;
-      --gray-light: #f8f9fa;
-      --border-color: #dee2e6;
-      --card-bg: white;
-      --green-success: #28a745;
-      --red-danger: #dc3545;
-      --yellow-warning: #ffc107;
-      --cyan-btn: #17a2b8; /* Cor para o botão de Configuração */
-    }
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background-color: var(--gray-light);
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ServGo! - Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/estiloIndex.css">
+        <link rel="stylesheet" href="./css/estiloAgendaPrestador.css">
+    </head>
 
-    .header {
-      background-color: var(--card-bg);
-      border-bottom: 1px solid var(--border-color);
-      padding: 10px 20px;
-    }
+    <body>
 
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        <!--INÍCIO DO CABEÇALHO DA PÁGINA-->
+        <header>
 
-    .brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
+            <!--TOPO DA PÁGINA-->
 
-    .logo {
-      width: 30px;
-      height: 30px;
-      background-color: var(--blue);
-      color: white;
-      text-align: center;
-      line-height: 30px;
-      border-radius: 4px;
-      margin-right: 8px;
-      font-weight: 700;
-    }
+            <!--Trabalha sobre os Menus (links)-->
+            <nav class="navbar navbar-expand-lg">
 
-    .nav a {
-      margin-left: 15px;
-      text-decoration: none;
-      color: var(--blue2);
-    }
+                <div class="container menu"> <!--Altera o conteúdo dos Menus (links)-->
 
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
+                    <!--Propriedades do Logo (Topo da Página) + Clicar no Logo volta para página Home-->
+                    <a class="navbar-brand" href="index.html">
+                        <span class="serv-part">Serv</span><span class="go-part">Go!</span>
+                    </a>
 
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      padding: 20px;
-    }
+                    <!--Botão Serviços Quando Estiver em Responsividade-->
+                    <div class="d-flex order-lg-3">
+                        <button class="btn btn-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasServices" aria-controls="offcanvasServices"
+                            style="background-color: #146ADB !important; border-color: #146ADB !important;">
+                            <i class="bi bi-list"></i> Serviços
+                        </button>
 
-    .cta {
-      display: inline-block;
-      padding: 8px 15px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-      background-color: var(--blue);
-      color: white;
-      border: none;
-    }
+                        <!--Botão Sanduíche Quando Estiver em Responsividade-->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
 
-    /* Estilos Específicos da Agenda */
-    .agenda-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    
-    .agenda-tabs {
-        display: flex;
-        margin-bottom: 15px;
-        border-bottom: 2px solid var(--border-color);
-    }
-    
-    .agenda-tabs a {
-        padding: 10px 15px;
-        text-decoration: none;
-        color: #6c757d;
-        font-weight: 600;
-        border-bottom: 2px solid transparent;
-        transition: all 0.2s;
-    }
-    
-    .agenda-tabs a.active {
-        color: var(--blue2);
-        border-bottom: 2px solid var(--blue2);
-    }
-    
-    .schedule-list {
-      list-style: none;
-      padding: 0;
-    }
+                    <!--Menus da Página Home-->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link nav-link-active" href="#">Início</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./avaliacao.html">Avaliações</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./Blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./RealContato.html">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./faq.html">FAQ</a></li>
+                        </ul>
 
-    .schedule-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-    
-    .schedule-item:last-child {
-        border-bottom: none;
-    }
+                        <!--Número de Telefone da Página Home-->
+                        <ul class="navbar-nav ms-auto align-items-lg-center">
+                            <li class="nav-item d-flex align-items-center me-3">
+                                <span class="nav-link p-0 d-none d-lg-block">(18) 99999-9999</span>
+                            </li>
 
-    .time-slot {
-      flex-shrink: 0;
-      width: 120px;
-      font-size: 1.1em;
-      font-weight: bold;
-      color: var(--blue);
-    }
-
-    .client-info {
-      flex-grow: 1;
-      padding: 0 20px;
-    }
-
-    .client-info strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1.05em;
-    }
-
-    .service-status {
-      flex-shrink: 0;
-      width: 150px;
-      text-align: right;
-    }
-
-    .status-tag {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 0.8em;
-      font-weight: 600;
-    }
-
-    .status-tag.confirmed {
-      background-color: #d4edda;
-      color: var(--green-success);
-    }
-
-    .status-tag.pending {
-      background-color: #fff3cd;
-      color: var(--yellow-warning);
-    }
-
-    .status-tag.completed {
-      background-color: #e2e3e5;
-      color: #6c757d;
-    }
-    
-    .action-buttons button {
-        margin-left: 8px;
-        padding: 5px 10px;
-        border: 1px solid #ccc;
-        background-color: white;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 0.9em;
-    }
-    
-    .action-buttons .btn-confirm {
-        background-color: var(--green-success);
-        color: white;
-        border: none;
-    }
-    
-    .action-buttons .btn-cancel {
-        background-color: var(--red-danger);
-        color: white;
-        border: none;
-    }
-
-  </style>
-</head>
-<body>
-  <header class="header">
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <div class="logo">PS</div>
-        <div style="font-weight:700;color:var(--blue2)">Portal Prestadores</div>
-      </a>
-      <nav class="nav">
-        <a href="index.html">Início</a>
-        <a href="agenda-prestador.html" style="font-weight:bold;color:var(--blue);">Agenda</a>
-        <a href="hotsite-admin.html">Hot Site (Admin)</a>
-        <a href="avaliacoes.html">Avaliações</a>
-      </nav>
-    </div>
-  </header>
+                            <!--Botões de Login e Cadastro da Página Home-->
+                            <li class="nav-item mb-2 mb-lg-0 me-2"><a class="btn btn-dark login" href="./login.html">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-warning cadastro" href="./cadastro.html">Cadastro</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--FIM DO CABEÇALHO DA PÁGINA-->
 
   <main class="container">
     <div class="agenda-header">
@@ -316,4 +164,57 @@
     </div>
   </main>
 </body>
+
+ <!------------------------------------------ INÍCIO DO RODAPÉ ------------------------------------------------>
+        <footer class="bg-dark text-white pt-5 pb-4" style="background-color: var(--corDeFundoRodape) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a class="navbar-footer" href="#">
+                        <span class="serv-part-footer">Serv</span><span class="go-part-footer">Go!</span>
+                    </a>
+                    <p class="small text-muted">Análise, inovação e conteúdo de valor.</p>
+                    <div class="d-flex social-icons-custom">
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Quem Somos</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Nossos Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Contato</h5>
+                    <p class="small text-white-50"><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - Cidade, SP
+                    </p>
+                    <p class="small text-white-50"><i class="bi bi-telephone-fill me-2"></i> (18) 91234-5678</p>
+                    <p class="small text-white-50"><i class="bi bi-envelope-fill me-2"></i> contato@site.com.br</p>
+                    <a href="#" class="small text-decoration-none text-warning">Trabalhe Conosco</a>
+                </div>
+            </div>
+            <hr class="text-white-50">
+            <div class="text-center small text-white-50">
+                © 2025 ServGo! Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <!-------------------------------------------- FIM DO RODAPÉ ------------------------------------------------>
 </html>
