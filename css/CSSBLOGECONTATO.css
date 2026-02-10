@@ -187,7 +187,7 @@ details[open] summary::after {
 .marquee-item {
     width: 200px;          /* Largura fixa */
     height: 120px;         /* Altura fixa */
-    background-color: #ccc;
+    background-color: #cccccc;
     border-radius: 12px;
     flex-shrink: 0;        /* Garante que não encolham */
 }
@@ -207,3 +207,50 @@ details[open] summary::after {
 
 
 /*-----------------------------------------FIM CARROSSEL ---------------------------------------*/
+
+.btn-mais{
+    background-color: rgb(37, 36, 36);
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    border: rgb(14, 13, 13);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-mais:hover{
+    background-color: #FFC300;
+    color: black;
+    padding: 8px;
+    border-radius: 6px;
+    border: #FFC300;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-leitura{
+    background-color: #007bff;   
+    border: #007bff; 
+    color:white;    
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-leitura:hover{
+    background-color: #FFC300;    
+    border: #FFC300;
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-footer{
+
+    background-color: #f1f1f1;
+    padding: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px 2px 8px rgba(29, 29, 29, 0.2);
+}
