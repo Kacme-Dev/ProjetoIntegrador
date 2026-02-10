@@ -648,3 +648,30 @@ body
         margin: 20px auto;
     }
 }
+
+/* 44-) Fixa a cor do botão de Cadastro */
+.cadastro
+{
+    background-color: var(--corDosBotoesDeCadastro) !important;
+    color: black !important;
+    border-color: var(--corDosBotoesDeCadastro) !important;
+}
+
+/* 45-) Estilo de Hover para o Botão de Cadastro do Header (.btn-warning) */
+.cadastro:hover
+{
+    /* COR FIXADA: Mantém a cor original no hover */
+    background-color: var(--corDosBotoesDeCadastro) !important;
+    color: black !important;
+    border-color: var(--corDosBotoesDeCadastro) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 46-) Garante a cor FIXA no estado Ativo/Clicado */
+.cadastro:active
+{
+    /* COR FIXADA: Garante a cor original ao ser pressionado */
+    background-color: var(--corDosBotoesDeCadastro) !important;
+    color: black !important;
+    border-color: var(--corDosBotoesDeCadastro) !important;
+}
