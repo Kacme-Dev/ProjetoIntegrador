@@ -1,0 +1,198 @@
+:root {
+  --blue: #007bff;
+  --blue2: #0056b3;
+  --gray-light: #f8f9fa;
+  --border-color: #dee2e6;
+  --card-bg: white;
+  --corDeFundoCabecalho: #146ADB;
+  --corDosBotoesDeCadastro: #ffc300;
+  --corDeFundoRodape: #2B2B2B;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--gray-light);
+}
+
+.header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--corDeFundoCabecalho);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--blue2);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--corDeFundoCabecalho);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.cta {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--corDeFundoCabecalho);
+    color: white;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.cta:hover {
+    background-color: var(--blue2);
+}
+
+/* Estilos Específicos do Hot Site */
+.hotsite-main {
+    display: flex;
+    gap: 30px;
+    padding: 0; /* Remove padding do card principal, o padding será interno */
+    border-left: 10px solid var(--corDosBotoesDeCadastro); /* Destaque principal */
+}
+
+.profile-card {
+    flex-shrink: 0;
+    width: 250px;
+    padding: 30px 20px;
+    border-right: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.hotsite-main > section {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.avatar {
+    background-color: var(--corDeFundoCabecalho);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto 15px;
+}
+
+.meta {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.stars {
+    color: var(--corDosBotoesDeCadastro);
+}
+
+.gallery {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.thumb {
+    width: 150px;
+    height: 100px;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    border-radius: 6px;
+    border: 1px dashed #adb5bd;
+    color: #6c757d;
+    overflow: hidden;
+}
+
+.testimonial {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: var(--gray-light);
+    border-left: 3px solid var(--corDeFundoCabecalho);
+    border-radius: 4px;
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+.placeholder {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hotsite-main {
+        flex-direction: column;
+        border-left: none;
+        border-top: 10px solid var(--corDosBotoesDeCadastro);
+        padding: 20px;
+    }
+    .profile-card {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+    }
+    .hotsite-main > section {
+        padding: 20px 0 0 0;
+    }
+    .gallery {
+        justify-content: center;
+    }
+    .thumb {
+        width: 45%;
+        height: 80px;
+    }
+}

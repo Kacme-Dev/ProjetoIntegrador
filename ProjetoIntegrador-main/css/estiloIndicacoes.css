@@ -1,0 +1,284 @@
+:root
+{
+    /* Mantenha suas variáveis */
+    --blue: #007bff;
+    --blue2: #0056b3;
+    --gray-light: #f8f9fa;
+    --border-color: #dee2e6;
+    --card-bg: white;
+    --yellow-admin: #FFC300;
+    --cyan-btn: #17a2b8; /* Cor para botões de configuração */
+    --corDeFundo: white;
+    --corDeFundoCabecalho: #146ADB; /* Azul principal do cabeçalho */
+    --corDosBotoesDeCadastro: #ffc300; /* Laranja */
+    --corDeFundoRodape: #2B2B2B; /* Fundo do rodapé */
+}
+
+/* Reset básico */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------
+    IMPLEMENTAÇÃO DO EFEITO DE PRESSIONAR PARA TODOS OS ELEMENTOS CLICÁVEIS (SOLICITADO)
+-------------------------------------------------------------------------------------------------------*/
+
+/* Agrupa todos os elementos interativos para aplicar o efeito de pressão:
+   - Botões padrão do Bootstrap (.btn)
+   - Links clicáveis com o cursor padrão (a)
+   - Componentes específicos como logo (.navbar-brand) e links de navegação (.nav-link)
+   - Botões nativos (button) e classes de chamada para ação (.cta)
+*/
+.btn, button, a, .navbar-brand, .cta
+{
+    /* Garante uma transição suave para o movimento de pressão e hover */
+    transition: all 0.15s ease-in-out; 
+}
+
+/* Efeito de PRESSIONAR (pseudo-seletor :active) - Aplica a todos os elementos interativos */
+.btn:active, button:active, a:active, .navbar-brand:active, .cta:active {
+    /* Move o elemento ligeiramente para baixo para simular a pressão */
+    transform: translateY(2px) !important;
+    
+    /* Remove a sombra de foco ao pressionar, se existir */
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+                            TOPO DA PÁGINA - CABEÇALHO E NAVEGAÃO - DE 01 A 05
+-------------------------------------------------------------------------------------------------------*/
+
+/* 01-) Barra de Menus - Topo da Página*/
+.navbar
+{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+/*----------------------------------LOGO (ServGo!) - TOPO DA PÁGINA------------------------------------*/
+
+/* 02-) Altera as características gerais do Logo */
+.navbar-brand
+{
+    font-size: 25px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.1s ease-in-out;
+}
+ 
+/* 03-) Efeito ao passar o mouse sobre o Logo */
+.navbar-brand:hover
+{
+    transform: scale(1.2); /* Ajustado para um scale um pouco menor */
+    cursor: pointer;
+}
+
+/* 04-) Altera caracterísitcas da palavar Serv do Logo */
+.serv-part
+{
+    color: black;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+ 
+/* 05-) Altera caracterísitcas da palavar GO! do Logo */
+.go-part
+{
+    color: #ffc300;
+    /* Contorno e sombra de profundidade */
+    text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);
+    position: relative;
+    left: 1px;
+}
+/*--------------------------------------------- FIM - LOGO - TOPO DA PÁGINA (MENUS)---------------------------------------------*/
+
+
+
+
+
+
+/*---------------------------ESTILO DOS LINKS DE NAVEGAÇÃO - MENUS/TOPO DA PÁGINA - DE 06 A 08---------------------------------*/
+
+/* 6-) Estilo Padrão para os Links de Navegação */
+.nav-link
+{
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: large;
+}
+
+/* 7-) Estilo ao Passar o Mouse (Hover) */
+.nav-link:hover
+{
+    color: var(--corDeFundoCabecalho); /* Azul principal */
+    text-decoration: underline;
+} 
+
+/* 8-) Estilo do Link Ativo */
+.nav-link-active /* INÍCIO */
+{
+    color: #ffc300; /* Amarelo de destaque */
+    font-weight: bold;
+}
+/*---------------------FIM - ESTILO DOS LINKS DE NAVEGAÇÃO - MENUS/TOPO DA PÁGINA---------------------*/
+
+/*-------------------------------------------------------------------------------------------------------
+                              FIM - TOPO DA PÁGINA - CABEÇALHO E NAVEGAÇÃO
+-------------------------------------------------------------------------------------------------------*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--gray-light);
+}
+
+h2{
+    margin-top: 30px;
+}
+
+.cta-avaliacoes{
+    background-color: black;    
+    padding: 10px 20px;
+    border-radius: 4px;    
+    font-weight: 600;    
+    border: none;    
+}
+
+.cta-avaliacoes:hover {
+    background-color: #5e5e5e;
+    font-weight: 500;
+}
+
+
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: var(--corDosBotoesDeCadastro);
+    outline: none;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: var(--corDosBotoesDeCadastro); /* Botão de Ação Laranja */
+    color: var(--corDeFundoRodape);
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.cta:hover {
+    background-color: #e6b300;
+}
+
+.linkless {
+    color: var(--blue2);
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.linkless:hover {
+    text-decoration: underline;
+    color: white;
+
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    .linkless {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------
+                                                FOOTER - DE 47 A 50
+-------------------------------------------------------------------------------------------------------*/
+
+/* 47-) Estiliza o container do footer */
+.navbar-footer
+{
+    font-size: 55px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 0;        
+}
+ 
+/* 48-) Classe não utilizada no HTML: navbar-brand-footer:hover */
+.serv-part-footer
+{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+ 
+/* 49-) Altera caracterísitcas da palavar GO! do Logo no Footer */
+.go-part-footer
+{
+    color: #FFC300; /* Amarelo */
+    text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333, 2px 2px 2px rgba(0, 0, 0, 0.6);        
+    position: relative;
+    left: 1px;        
+}
+/*-------------------------------------------------------------------------------------------------------
+                                            FIM - FOOTER
+-------------------------------------------------------------------------------------------------------*/
+
+
+.container-footer{
+
+    background-color: #f1f1f1;
+    padding: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px 2px 8px rgba(29, 29, 29, 0.2);
+}

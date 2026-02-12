@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServGo! - Perfil do Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* Estilos adicionais para o perfil */
+        .sidebar {
+            background-color: #ffffff; /* Fundo branco para a sidebar */
+            border-right: 1px solid #e0e0e0;
+            min-height: calc(100vh - 120px); /* Ajuste a altura */
+            padding-top: 20px;
+        }
+        .profile-stat-card {
+            border-left: 5px solid; /* Usará a cor de destaque da marca */
+        }
+        .stat-prestador { border-color: #FFC300; }
+        .stat-cliente { border-color: #146ADB; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="cadastro.html">
+                    <span class="serv-part">Serv</span><span class="go-part">Go!</span>
+                </a>
+                <span class="navbar-text text-white small me-3">Olá, Usuário de Teste!</span>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item mb-2 mb-lg-0 me-2">
+                            <a class="btn btn-danger" href="./index.html">Sair</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door me-2"></i>Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-circle me-2"></i>Meu Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-calendar-check me-2"></i>Meus Agendamentos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-chat-dots me-2"></i>Mensagens</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-gear me-2"></i>Configurações</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <h1 class="h3 mb-4"><b>ÁREA DO PRESTADOR</b></h1>
+                
+                <div class="row mb-4">
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card profile-stat-card stat-prestador">
+                            <div class="card-body">
+                                <h5 class="card-title text-muted">Próximo Agendamento</h5>
+                                <p class="h4">Limpeza de Filtro</p>
+                                <span class="small text-warning"><i class="bi bi-clock me-1"></i> Amanhã, 10:00h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card profile-stat-card stat-cliente">
+                            <div class="card-body">
+                                <h5 class="card-title text-muted">Avaliação Média</h5>
+                                <p class="h4">4.8 / 5.0</p>
+                                <span class="small text-primary"><i class="bi bi-star-fill me-1"></i> Baseado em 12 reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card profile-stat-card stat-prestador">
+                            <div class="card-body">
+                                <h5 class="card-title text-muted">Mensagens Não Lidas</h5>
+                                <p class="h4">3</p>
+                                <span class="small text-warning"><i class="bi bi-envelope me-1"></i> Ver todas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        Ações Rápidas
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary me-2"><i class="bi bi-search me-1"></i> Buscar Novo Serviço</a>
+                        <a href="#" class="btn btn-warning me-2"><i class="bi bi-pencil-square me-1"></i> Editar Perfil</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-light">
+                        Seu Histórico
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Troca de Válvula <span class="badge bg-success">Concluído</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Revisão Elétrica <span class="badge bg-warning text-dark">Pendente</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Limpeza Completa <span class="badge bg-secondary">Cancelado</span></li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

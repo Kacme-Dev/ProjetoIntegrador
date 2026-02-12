@@ -1,0 +1,256 @@
+/* ---------------------------------------Inicio Ocultar FAQ------------------------ */
+/* Estilo geral do container de FAQ */
+.faq-container {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Estilo da linha separadora abaixo do título principal */
+.titulo-divisor-faq {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+/* Estilo para cada item do FAQ (o <details>) */
+details {
+  /* É ISSO QUE CRIA A LINHA SEPARADORA ENTRE AS PERGUNTAS */
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+}
+
+/* A parte clicável (a pergunta) */
+summary {
+  cursor: pointer; /* Faz o mouse virar uma "mãozinha" */
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 5px;
+  list-style: none; /* Remove a setinha padrão (opcional) */
+  position: relative;
+}
+
+/* (Opcional) Adiciona um '+' e '-' no lugar da seta padrão */
+summary::after {
+  content: '+';
+  position: absolute;
+  right: 10px;
+  font-size: 1.5em;
+  line-height: 0.8;
+  color: #888;
+}
+
+/* Quando o item está aberto, muda o '+' para '-' */
+details[open] summary::after {
+  content: '−';
+}
+
+
+/* O conteúdo da resposta */
+.faq-content {
+  padding: 10px 10px 10px 5px; /* Espaçamento interno da resposta */
+  background-color: #f9f9f9;
+  margin-top: 10px;
+  border-left: 3px solid #007bff; /* Uma barra azul à esquerda */
+}
+
+.faq-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+/* ---------------------------------------FIM Ocultar FAQ------------------------ */
+/* ---------------------------------------Fixar o campo de menssagem------------------------ */
+.caixa-mensagem-fixa {
+  resize: none;
+
+  height: 150px;
+  width: 100%; /* ou um valor fixo, como 500px */
+}
+
+
+/* Container geral para segurar as duas colunas */
+.skeleton-container-blog {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;      /* Espaço entre as duas colunas grandes */
+    padding: 20px;
+    font-family: sans-serif; /* Apenas para visualização */
+}
+
+/* --- COLUNA ESQUERDA --- */
+.main-col-blog {
+    flex: 1.8; /* Ocupa mais espaço que a lateral */
+}
+
+.hero-placeholder-blog {
+    width: 100%;
+    height: 350px;
+    background-color: var(--corDeFundo); /* Cor cinza para representar a imagem */
+    border-radius: 24px;       /* Arredondamento característico do Google */
+}
+
+.overlap-card-blog {
+    background: var(--corDeFundo);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra básica para destacar */
+    
+    /* O SEGREDO DO LAYOUT ESTÁ AQUI: */
+    margin-top: -100px; /* Puxa o cartão para cima da imagem */
+    margin-left: 40px;  /* Empurra o cartão para a direita */
+    position: relative; /* Garante que fique por cima da imagem */
+}
+
+/* --- COLUNA DIREITA --- */
+.sidebar-col-blog {
+    flex: 1; /* Ocupa menos espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-item-blog {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #c5c5c5; /* Separador simples */
+}
+
+.sidebar-item-blog-sem-sepa {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+
+}
+
+
+.sidebar-text-blog {
+    flex: 1; /* O texto ocupa o espaço disponível */
+}
+
+.sidebar-img-placeholder-blog {
+    width: 160px;
+    height: 120px;
+    background-color: #e0e0e0; /* Placeholder da imagem lateral */
+    border-radius: 12px;
+    flex-shrink: 0; /* Impede a imagem de esmagar se o texto for grande */
+}
+
+/* Responsividade básica para não quebrar em telas menores */
+@media (max-width: 768px) {
+    .skeleton-container-blog {
+        flex-direction: column;
+    }
+    .overlap-card-blog {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: -50px;
+    }
+}
+
+.container-mais-blog{
+    text-align: center;
+}
+
+
+/*-------------------------------------------- CARROSSEL BLOG---------------------------------------*/
+
+/* Container que limita a visão (a "janela" do marquee) */
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* Esconde o que está fora da tela */
+    background: #f0f0f0; /* Cor de fundo opcional */
+    padding: 20px 0;
+}
+
+/* A "pista" que contém todos os itens e que vai se mover */
+.marquee-track {
+    display: flex;
+    gap: 20px;             /* Espaço entre os itens */
+    width: max-content;    /* FORÇA a largura a ser a soma de todos os itens */
+    
+    /* A ANIMAÇÃO */
+    /* 20s = tempo para dar uma volta completa (ajuste para mais rápido/lento) */
+    /* linear = velocidade constante, sem acelerar/desacelerar */
+    /* infinite = nunca para */
+    animation: marquee-scroll 9s linear infinite;
+}
+
+/* Opcional: Pausa a animação quando passa o mouse */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Os itens individuais */
+.marquee-item {
+    width: 200px;          /* Largura fixa */
+    height: 120px;         /* Altura fixa */
+    background-color: #cccccc;
+    border-radius: 12px;
+    flex-shrink: 0;        /* Garante que não encolham */
+}
+
+/* DEFINIÇÃO DA ANIMAÇÃO */
+/* Move da posição 0 até -50% (que é exatamente a metade da pista duplicada) */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 10px)); /* -50% menos metade do gap para ajuste fino se precisar */
+        /* Se o gap for 20px, tente ajustar o cálculo acima se sentir um pequeno "pulo" no final, 
+           mas geralmente só -50% funciona se os grupos forem idênticos */
+    }
+}
+
+
+/*-----------------------------------------FIM CARROSSEL ---------------------------------------*/
+
+.btn-mais{
+    background-color: rgb(37, 36, 36);
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    border: rgb(14, 13, 13);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-mais:hover{
+    background-color: #FFC300;
+    color: black;
+    padding: 8px;
+    border-radius: 6px;
+    border: #FFC300;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-leitura{
+    background-color: #007bff;   
+    border: #007bff; 
+    color:white;    
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-leitura:hover{
+    background-color: #FFC300;    
+    border: #FFC300;
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 6px;    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-footer{
+
+    background-color: #f1f1f1;
+    padding: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px 2px 8px rgba(29, 29, 29, 0.2);
+}

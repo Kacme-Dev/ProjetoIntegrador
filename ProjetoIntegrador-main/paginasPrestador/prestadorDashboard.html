@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServGo! - Painel Administrativo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* Estilos adicionais para o dashboard */
+        .dashboard-stat-card {
+            border-bottom: 4px solid; 
+        }
+        .stat-primary { border-color: #146ADB; }
+        .stat-warning { border-color: #FFC300; }
+        .stat-danger { border-color: #dc3545; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <span class="serv-part">Serv</span><span class="go-part">Go!</span>
+                </a>
+                <span class="navbar-text text-white small me-3">Admin: Gerenciamento Total</span>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item mb-2 mb-lg-0 me-2">
+                            <a class="btn btn-danger" href="./index.html">Sair (Admin)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container py-4">
+        <h1 class="h3 mb-4"><b>ÁREA DO ADMIN</b></h1>
+
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card dashboard-stat-card stat-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">Cadastros Ativos</h5>
+                        <p class="h3">1.250</p>
+                        <span class="small text-primary"><i class="bi bi-arrow-up me-1"></i> +12% Último Mês</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card dashboard-stat-card stat-warning">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">Prestadores Novos</h5>
+                        <p class="h3">52</p>
+                        <span class="small text-warning"><i class="bi bi-person-fill-add me-1"></i> Para Aprovação</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card dashboard-stat-card stat-danger">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">Tickets de Suporte</h5>
+                        <p class="h3">7</p>
+                        <span class="small text-danger"><i class="bi bi-ticket-detailed me-1"></i> Abertos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card dashboard-stat-card stat-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-muted">Receita Média (Simulada)</h5>
+                        <p class="h3">R$ 5.400</p>
+                        <span class="small text-primary"><i class="bi bi-graph-up me-1"></i> Mês Atual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                Gerenciamento Rápido de Usuários
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr><th>ID</th><th>Nome</th><th>E-mail</th><th>Tipo</th><th>Status</th><th>Ações</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>101</td><td>Alice Silva</td><td>alice@email.com</td><td>Prestador</td><td><span class="badge bg-success">Ativo</span></td><td><a href="#" class="btn btn-sm btn-outline-primary">Ver</a></td></tr>
+                        <tr><td>102</td><td>Bruno Mendes</td><td>bruno@email.com</td><td>Cliente</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td><a href="#" class="btn btn-sm btn-outline-primary">Ver</a></td></tr>
+                        <tr><td>103</td><td>Carla Vales</td><td>carla@email.com</td><td>Prestador</td><td><span class="badge bg-danger">Suspenso</span></td><td><a href="#" class="btn btn-sm btn-outline-primary">Ver</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
