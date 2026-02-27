@@ -675,3 +675,12 @@ body
     color: black !important;
     border-color: var(--corDosBotoesDeCadastro) !important;
 }
+
+.container-footer{
+
+    background-color: #f1f1f1;
+    padding: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0px 2px 8px rgba(29, 29, 29, 0.2);
+}

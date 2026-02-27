@@ -73,6 +73,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (formPrestador) {
         formPrestador.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            var email = document.getElementById('email-prestador').value.trim();
+            var senha = document.getElementById('senha-prestador').value.trim();
+            var senhaRepita = document.getElementById('senha-prestador-repita').value.trim();
+            var nome = document.getElementById('nome-prestador').value.trim();
+
+            if (senha !== senhaRepita) {
+                alert('As senhas não coincidem. Por favor, verifique.');
+                return;
+            }
+
+            // Salva o usuário cadastrado no localStorage
+            var usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+            usuariosCadastrados[email] = { senha: senha, tipo: 'prestador', nome: nome };
+            localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados));
+
             window.location.href = 'login.html?cadastro=sucesso';
         });
     }
@@ -81,6 +97,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (formCliente) {
         formCliente.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            var email = document.getElementById('email-cliente').value.trim();
+            var senha = document.getElementById('senha-cliente').value.trim();
+            var senhaRepita = document.getElementById('senha-cliente-repita').value.trim();
+            var nome = document.getElementById('nome-cliente').value.trim();
+
+            if (senha !== senhaRepita) {
+                alert('As senhas não coincidem. Por favor, verifique.');
+                return;
+            }
+
+            // Salva o usuário cadastrado no localStorage
+            var usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+            usuariosCadastrados[email] = { senha: senha, tipo: 'cliente', nome: nome };
+            localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados));
+
             window.location.href = 'login.html?cadastro=sucesso';
         });
     }

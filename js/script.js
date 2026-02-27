@@ -154,6 +154,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (formPrestador) {
         formPrestador.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            var email = document.getElementById('email-prestador').value.trim();
+            var senha = document.getElementById('senha-prestador').value.trim();
+            var senhaRepita = document.getElementById('senha-prestador-repita').value.trim();
+            var nome = document.getElementById('nome-prestador').value.trim();
+
+            if (senha !== senhaRepita) {
+                alert('As senhas não coincidem. Por favor, verifique.');
+                return;
+            }
+
+            // Salva o usuário cadastrado no localStorage
+            var usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+            usuariosCadastrados[email] = { senha: senha, tipo: 'prestador', nome: nome };
+            localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados));
+
             window.location.href = 'login.html?cadastro=sucesso';
         });
     }
@@ -162,6 +178,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (formCliente) {
         formCliente.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            var email = document.getElementById('email-cliente').value.trim();
+            var senha = document.getElementById('senha-cliente').value.trim();
+            var senhaRepita = document.getElementById('senha-cliente-repita').value.trim();
+            var nome = document.getElementById('nome-cliente').value.trim();
+
+            if (senha !== senhaRepita) {
+                alert('As senhas não coincidem. Por favor, verifique.');
+                return;
+            }
+
+            // Salva o usuário cadastrado no localStorage
+            var usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+            usuariosCadastrados[email] = { senha: senha, tipo: 'cliente', nome: nome };
+            localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosCadastrados));
+
             window.location.href = 'login.html?cadastro=sucesso';
         });
     }
@@ -203,28 +235,43 @@ document.addEventListener('DOMContentLoaded', function() {
                     const email = emailInput.value.trim();
                     const senha = senhaInput.value.trim();
                     alertaErroContainer.innerHTML = ''; // Limpa erros anteriores
-                    
+
+                    // Verifica primeiro nos usuários hardcoded
                     if (usuariosValidos[email] && usuariosValidos[email] === senha) {
-                        // LOGIN BEM-SUCEDIDO
+                        // LOGIN BEM-SUCEDIDO (usuários padrão)
                         if (email === "admin@servgo.com") {
                         // Redireciona para o painel administrativo
                         window.location.href = 'dashboard.html'; 
                     } else if (email === "cliente@servgo.com") {
                         // Redireciona para a nova página de Cliente
-                        window.location.href = 'perfil_cliente.html'; 
+                        window.location.href = 'clienteAreaExclusiva.html'; 
                     } else {
                         // Redireciona o Prestador para a página genérica de perfil (perfil.html)
-                        window.location.href = 'hotsiteADM.html'; 
+                        window.location.href = 'prestadorHotsiteAdm.html'; 
                     }
                     } else {
-                        // LOGIN COM FALHA
-                        const erroHTML = `
-                            <div class="alert alert-danger fade show text-center" role="alert">
-                                E-mail e/ou senha incorretos. Tente novamente.
-                            </div>
-                        `;
-                        alertaErroContainer.innerHTML = erroHTML;
-                        senhaInput.value = ''; // Limpa o campo de senha
+                        // Verifica nos usuários cadastrados via localStorage
+                        var usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados') || '{}');
+
+                        if (usuariosCadastrados[email] && usuariosCadastrados[email].senha === senha) {
+                            // LOGIN BEM-SUCEDIDO (usuário cadastrado)
+                            var tipoUsuario = usuariosCadastrados[email].tipo;
+
+                            if (tipoUsuario === 'prestador') {
+                                window.location.href = 'prestadorHotsiteAdm.html';
+                            } else if (tipoUsuario === 'cliente') {
+                                window.location.href = 'clienteAreaExclusiva.html';
+                            }
+                        } else {
+                            // LOGIN COM FALHA
+                            const erroHTML = `
+                                <div class="alert alert-danger fade show text-center" role="alert">
+                                    E-mail e/ou senha incorretos. Tente novamente.
+                                </div>
+                            `;
+                            alertaErroContainer.innerHTML = erroHTML;
+                            senhaInput.value = ''; // Limpa o campo de senha
+                        }
                     }
                 });
             }

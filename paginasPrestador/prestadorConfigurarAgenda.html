@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ServGo! - Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/estiloIndex.css">
+        <link rel="stylesheet" href="/css/estiloConfigAgenda.css">
+    </head>
+
+    <body>
+
+        <!--INÍCIO DO CABEÇALHO DA PÁGINA-->
+        <header>
+
+            <!--TOPO DA PÁGINA-->
+
+            <!--Trabalha sobre os Menus (links)-->
+            <nav class="navbar navbar-expand-lg">
+
+                <div class="container menu"> <!--Altera o conteúdo dos Menus (links)-->
+
+                    <!--Propriedades do Logo (Topo da Página) + Clicar no Logo volta para página Home-->
+                    <a class="navbar-brand" href="index.html">
+                        <span class="serv-part">Serv</span><span class="go-part">Go!</span>
+                    </a>
+
+                    <!--Botão Serviços Quando Estiver em Responsividade-->
+                    <div class="d-flex order-lg-3">
+                        <button class="btn btn-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasServices" aria-controls="offcanvasServices"
+                            style="background-color: #146ADB !important; border-color: #146ADB !important;">
+                            <i class="bi bi-list"></i> Serviços
+                        </button>
+
+                        <!--Botão Sanduíche Quando Estiver em Responsividade-->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                    <!--Menus da Página Home-->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link nav-link-active" href="#">Início</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./avaliacao.html">Avaliações</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./Blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./RealContato.html">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./faq.html">FAQ</a></li>
+                        </ul>
+
+                        <!--Número de Telefone da Página Home-->
+                        <ul class="navbar-nav ms-auto align-items-lg-center">
+                            <li class="nav-item d-flex align-items-center me-3">
+                                <span class="nav-link p-0 d-none d-lg-block">(18) 99999-9999</span>
+                            </li>
+
+                            <!--Botões de Login e Cadastro da Página Home-->
+                            <li class="nav-item mb-2 mb-lg-0 me-2"><a class="btn btn-dark login" href="./login.html">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-warning cadastro" href="./cadastro.html">Cadastro</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--FIM DO CABEÇALHO DA PÁGINA-->
+
+  <main class="container">
+    <h1>Configuração da Agenda e Disponibilidade</h1>
+    <p class="meta">Defina seus horários regulares de atendimento e as regras de agendamento para o seu Hot Site.</p>
+
+    <div class="card">
+        <form>
+            <div class="form-section">
+                <h3>Horários de Atendimento Padrão</h3>
+                
+                <div class="time-config-grid" style="font-size: 0.9em; color:#6c757d;">
+                    <strong>Dia da Semana</strong>
+                    <strong>Início (Ex: 08:00)</strong>
+                    <strong>Fim (Ex: 17:00)</strong>
+                    <strong>Ativo?</strong>
+                </div>
+
+                <div class="time-config-grid">
+                    <label for="segunda">Segunda</label>
+                    <input type="time" id="segunda-inicio" value="08:00">
+                    <input type="time" id="segunda-fim" value="17:00">
+                    <div class="checkbox-container"><input type="checkbox" checked></div>
+                </div>
+
+                <div class="time-config-grid">
+                    <label for="terca">Terça</label>
+                    <input type="time" id="terca-inicio" value="08:00">
+                    <input type="time" id="terca-fim" value="17:00">
+                    <div class="checkbox-container"><input type="checkbox" checked></div>
+                </div>
+                
+                <div class="time-config-grid">
+                    <label for="quarta">Quarta</label>
+                    <input type="time" id="quarta-inicio" value="08:00">
+                    <input type="time" id="quarta-fim" value="17:00">
+                    <div class="checkbox-container"><input type="checkbox" checked></div>
+                </div>
+                
+                <div class="time-config-grid">
+                    <label for="quinta">Quinta</label>
+                    <input type="time" id="quinta-inicio" value="08:00">
+                    <input type="time" id="quinta-fim" value="17:00">
+                    <div class="checkbox-container"><input type="checkbox" checked></div>
+                </div>
+
+                <div class="time-config-grid">
+                    <label for="sexta">Sexta</label>
+                    <input type="time" id="sexta-inicio" value="08:00">
+                    <input type="time" id="sexta-fim" value="17:00">
+                    <div class="checkbox-container"><input type="checkbox" checked></div>
+                </div>
+
+                <div class="time-config-grid">
+                    <label for="sabado">Sábado</label>
+                    <input type="time" id="sabado-inicio" value="08:00">
+                    <input type="time" id="sabado-fim" value="12:00">
+                    <div class="checkbox-container"><input type="checkbox" checked></div>
+                </div>
+
+                <div class="time-config-grid">
+                    <label for="domingo">Domingo</label>
+                    <div class="unavailable-label" style="grid-column: 2 / span 2;">Fechado</div>
+                    <div class="checkbox-container"><input type="checkbox" disabled></div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Regras de Agendamento</h3>
+                
+                <div class="input-group">
+                    <label for="duracao-servico">Duração padrão dos serviços (em minutos):</label>
+                    <input type="number" id="duracao-servico" value="120" min="30" step="30">
+                    <p class="meta">Isso define a duração dos blocos que os clientes podem reservar (Ex: 120 minutos = 2 horas).</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="antecedencia">Mínimo de antecedência para agendamento (em horas):</label>
+                    <input type="number" id="antecedencia" value="24" min="1">
+                    <p class="meta">Impede agendamentos com menos de 24 horas de aviso.</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="intervalo">Intervalo entre agendamentos (em minutos):</label>
+                    <select id="intervalo">
+                        <option value="0">0 minutos (sem intervalo)</option>
+                        <option value="15" selected>15 minutos</option>
+                        <option value="30">30 minutos</option>
+                    </select>
+                    <p class="meta">Tempo extra para deslocamento ou preparo.</p>
+                </div>
+            </div>
+            
+            <div class="action-row">
+                <a href="agenda-prestador.html" class="btn btn-cancel">Voltar para Agenda</a>
+                <button type="submit" class="btn btn-save">Salvar Configurações</button>
+            </div>
+        </form>
+    </div>
+  </main>
+</body>
+ <!------------------------------------------ INÍCIO DO RODAPÉ ------------------------------------------------>
+        <footer class="bg-dark text-white pt-5 pb-4" style="background-color: var(--corDeFundoRodape) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a class="navbar-footer" href="#">
+                        <span class="serv-part-footer">Serv</span><span class="go-part-footer">Go!</span>
+                    </a>
+                    <p class="small text-muted">Análise, inovação e conteúdo de valor.</p>
+                    <div class="d-flex social-icons-custom">
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Quem Somos</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Nossos Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Contato</h5>
+                    <p class="small text-white-50"><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - Cidade, SP
+                    </p>
+                    <p class="small text-white-50"><i class="bi bi-telephone-fill me-2"></i> (18) 91234-5678</p>
+                    <p class="small text-white-50"><i class="bi bi-envelope-fill me-2"></i> contato@site.com.br</p>
+                    <a href="#" class="small text-decoration-none text-warning">Trabalhe Conosco</a>
+                </div>
+            </div>
+            <hr class="text-white-50">
+            <div class="text-center small text-white-50">
+                © 2025 ServGo! Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <!-------------------------------------------- FIM DO RODAPÉ ------------------------------------------------>
+</html>

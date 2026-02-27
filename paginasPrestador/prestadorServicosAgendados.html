@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ServGo! - Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/estiloIndex.css">
+        <link rel="stylesheet" href="/css/estiloConfigAgenda.css">
+    </head>
+
+    <body>
+
+        <!--INÍCIO DO CABEÇALHO DA PÁGINA-->
+        <header>
+
+            <!--TOPO DA PÁGINA-->
+
+            <!--Trabalha sobre os Menus (links)-->
+            <nav class="navbar navbar-expand-lg">
+
+                <div class="container menu"> <!--Altera o conteúdo dos Menus (links)-->
+
+                    <!--Propriedades do Logo (Topo da Página) + Clicar no Logo volta para página Home-->
+                    <a class="navbar-brand" href="index.html">
+                        <span class="serv-part">Serv</span><span class="go-part">Go!</span>
+                    </a>
+
+                    <!--Botão Serviços Quando Estiver em Responsividade-->
+                    <div class="d-flex order-lg-3">
+                        <button class="btn btn-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasServices" aria-controls="offcanvasServices"
+                            style="background-color: #146ADB !important; border-color: #146ADB !important;">
+                            <i class="bi bi-list"></i> Serviços
+                        </button>
+
+                        <!--Botão Sanduíche Quando Estiver em Responsividade-->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                    <!--Menus da Página Home-->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link nav-link-active" href="#">Início</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./avaliacao.html">Avaliações</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./Blog.html">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./RealContato.html">Contato</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./faq.html">FAQ</a></li>
+                        </ul>
+
+                        <!--Número de Telefone da Página Home-->
+                        <ul class="navbar-nav ms-auto align-items-lg-center">
+                            <li class="nav-item d-flex align-items-center me-3">
+                                <span class="nav-link p-0 d-none d-lg-block">(18) 99999-9999</span>
+                            </li>
+
+                            <!--Botões de Login e Cadastro da Página Home-->
+                            <li class="nav-item mb-2 mb-lg-0 me-2"><a class="btn btn-dark login" href="./login.html">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-warning cadastro" href="./cadastro.html">Cadastro</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--FIM DO CABEÇALHO DA PÁGINA-->
+
+  <main class="container">
+    <div class="agenda-header">
+        <h1>Minha Agenda de Serviços</h1>
+        <a class="cta" href="configurar-agenda.html" style="background-color:#17a2b8;">Configurar Disponibilidade</a>
+    </div>
+
+    <div class="card">
+        <div class="agenda-tabs">
+            <a href="#" class="active">Próximos Agendamentos (6)</a>
+            <a href="#">Pendentes de Confirmação (1)</a>
+            <a href="#">Histórico (35)</a>
+        </div>
+        
+        <ul class="schedule-list">
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">HOJE</div>
+                    14:00 - 17:00
+                </div>
+                <div class="client-info">
+                    <strong>Maria da Silva</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Montagem de Estante</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Rua das Flores, 123 - Centro</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag confirmed">Confirmado</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button style="border-color: var(--blue);">Detalhes</button>
+                        <button class="btn-cancel">Cancelar</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">AMANHÃ</div>
+                    09:00 - 11:00
+                </div>
+                <div class="client-info">
+                    <strong>Pedro Souza</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Pequeno Reparo na Porta</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Av. Principal, 500 - Vila Nova</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag pending">Pendente</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button class="btn-confirm">Confirmar</button>
+                        <button class="btn-cancel">Rejeitar</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">QUI, 25/OUT</div>
+                    10:00 - 12:00
+                </div>
+                <div class="client-info">
+                    <strong>Ana Lúcia</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Restauração de Móvel Antigo</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Bairro Nobre, 330</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag confirmed">Confirmado</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button style="border-color: var(--blue);">Detalhes</button>
+                        <button class="btn-cancel">Cancelar</button>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="schedule-item">
+                <div class="time-slot">
+                    <div style="font-size: 0.9em; color: #6c757d;">SEG, 14/OUT</div>
+                    08:00 - 13:00
+                </div>
+                <div class="client-info">
+                    <strong>Fábio Mello</strong>
+                    <p style="margin: 0; font-size: 0.9em;">Serviço: Instalação de Prateleiras (5)</p>
+                    <p style="margin: 4px 0 0; font-size: 0.8em; color: #6c757d;">Local: Condomínio Residencial</p>
+                </div>
+                <div class="service-status">
+                    <span class="status-tag completed">Concluído</span>
+                    <div class="action-buttons" style="margin-top: 5px;">
+                        <button>Ver Nota</button>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        
+    </div>
+  </main>
+</body>
+
+<!------------------------------------------ INÍCIO DO RODAPÉ ------------------------------------------------>
+        <footer class="bg-dark text-white pt-5 pb-4" style="background-color: var(--corDeFundoRodape) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a class="navbar-footer" href="#">
+                        <span class="serv-part-footer">Serv</span><span class="go-part-footer">Go!</span>
+                    </a>
+                    <p class="small text-muted">Análise, inovação e conteúdo de valor.</p>
+                    <div class="d-flex social-icons-custom">
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Quem Somos</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Serviços</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Nossos Serviços</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Exemplo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 border-bottom border-warning pb-2">Contato</h5>
+                    <p class="small text-white-50"><i class="bi bi-geo-alt-fill me-2"></i> Rua Exemplo, 123 - Cidade, SP
+                    </p>
+                    <p class="small text-white-50"><i class="bi bi-telephone-fill me-2"></i> (18) 91234-5678</p>
+                    <p class="small text-white-50"><i class="bi bi-envelope-fill me-2"></i> contato@site.com.br</p>
+                    <a href="#" class="small text-decoration-none text-warning">Trabalhe Conosco</a>
+                </div>
+            </div>
+            <hr class="text-white-50">
+            <div class="text-center small text-white-50">
+                © 2025 ServGo! Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    <!-------------------------------------------- FIM DO RODAPÉ ------------------------------------------------>
+
+</html>
